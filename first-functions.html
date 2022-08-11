@@ -17,10 +17,235 @@
         function gallonsToLiters (gallons) {
           return gallons * 3.78541;
         }
-        function celsiusToFarenheit (celsius) {
+        function celsiusToFahrenheit (celsius) {
           return ((celsius * 1.8) + 32);
         }
 
+        //Booleans Exercise
+        let number = 30;
+        if (number %2 === 0) {
+            console.log("That number is even.");
+        } else {
+            console.log("That number is odd.");
+        }
+
+        // function isOdd (num) {
+        //     if (Math.abs(num) %2 === 1) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // } Not as efficient as it could be
+
+
+        function isOdd (num) {
+            return Math.abs(num) %2 === 1;
+        }
+
+        if (number %3 === 0 && number %5 === 0) {
+            console.log("That number is divisible by both 3 and 5.");
+        } else {
+            console.log("That number is either not divisible by 3 or not divisible by 5, or both.");
+        }
+
+        function divisibleByFiveAndThree (number) {
+            return number %3 === 0 && number %5 === 0;
+        }
+
+        function divisibleByFiveOrThree (number) {
+            return number %3 === 0 || number %5 === 0;
+        }
+
+        // Mini Exercises!!
+
+        // Mini-exercise: write a function that returns true if a number is divisible by either 7 or 3, or false if a number is divisible by neither 7 nor 3.
+        function divisThreeOrSeven (number) {
+            return number %3 === 0 || number %7 === 0;
+        }
+
+        // Mini-exercise 2: write a function that returns true if a number is divisible by either 3 or 2, or false if it is divisible by neither 2 nor 3.
+        function divisTwoOrThree (number) {
+            return number %2 === 0 || number %3 === 0;
+        }
+        // Mini-exercise 3: write a function that returns true if a number is both odd and divisible by 3, or false if the number is neither odd nor divisible by 3.
+        function oddAndDivisThree (number) {
+            return number %2 !== 0 && number %3 === 0;
+        }
+        // Mini-exercise 4: modify the above function so that it returns true if the number is either odd or divisible by 3, or false if it is neither odd nor divisible by 3.
+        function oddOrDivisThree (number) {
+            return number %2 !== 0 || number %3 === 0;
+        }
+
+        let myName = "Mason";
+        let myLastName = "Wudtee";
+        let myTitle = "SrA";
+        let myFullName = myName + " " + myLastName;
+        myFullName = myTitle + " " + myFullName;
+        console.log(myFullName);
+
+        let x = 1;
+        x = x + 1;
+        console.log(x);
+
+        let sentence = "All the world";
+        sentence = sentence + "'s a stage";
+        console.log(sentence);
+
+        console.log("Shakespeare said: \"All the world's a stage\"...");
+
+        console.log(`Shakespeare said: "All the world's a stage"... ` + myFullName);
+
+        console.log(`${myTitle} ${myName} ${myLastName} "${myFullName}"`);
+
+
+        //More mini exercises!!!!!!!
+
+        // Mini-exercise.  Write a function that takes a person's first, middle, and last names and returns their full name.
+
+        function firstMiddleLast (first, middle, last) {
+            return `${first} ${middle} ${last} "WEEEEEEE"`;
+        }
+
+            //NOT WORKING. TRY SOMETHING ELSE
+
+            //     function firstMiddleLast (name) {
+            //         let first = "";
+            //         let middle = "";
+            //         let last = "";
+            //         name = `${first} ${middle} ${last} "WEEEEEEE (TEST)"`;
+            //         console.log(name);
+            //     }
+
+            // function firstMiddleLast (fullName) {
+            //     let first = "Mason";
+            //     let middle = "James";
+            //     let last = "Wudtee";
+            //
+            //     fullName = (`${first} ${middle} ${last}`);
+            //     console.log(fullName);
+            // }
+
+
+        // function firstMiddleLast (fullName) {
+            //     let first = "Mason";
+            //     let middle = "J";
+            //     let last = "Wudtee";
+            //     fullName = `${first} ${middle} ${last} "WEEEEEEE"`;
+            //     console.log(fullName);
+            //
+            // }
+
+
+            // function firstMiddleLast (first, middle, last) {
+            //     first = "Mason"; middle = "J"; last = "Wudtee";
+            //     console.log(`${first} ${middle} ${last} "WEEEEEEE"`);
+            //
+            // }
+
+// Mini exercise. Write a function that takes a house number, street name, city, state, and zip code and returns the full address.
+            function address(houseNumber, streetName, city, state, zipCode) {
+            return `${houseNumber} ${streetName} ${city}, ${state} ${zipCode}`;
+            }
+
+
+//     Bonus.  Write a function that takes a number representing the temperature and a boolean representing whether the temperature is Fahrenheit or not.  If it is Fahrenheit, the function converts to Celsius.  Otherwise, it convets to Fahrenheit.  Look up the Fahrenheit to Celsius conversion formula online.
+            function temperatureConversion(temperature, isFahrenheit){
+            if (isFahrenheit === true) {
+                return (temperature - 32) * 5 / 9;
+            } else {
+                return (temperature * 9 / 5) +32;
+            }
+            }
+//     Bonus.  Change your functions for liters-gallons and miles-kilometers so they convert both ways.
+        function litersGallons(vol, isLiters){
+            if (isLiters === true) {
+                return vol / 3.8 + " gallons."; //This is liter conversion to gallons
+            } else {
+                return vol * 3.8 + " liters." //This is gallon conversion to liters
+            }
+        }
+
+        function allCalc(num, givenUnit){
+            givenUnit = givenUnit.toLocaleLowerCase();
+            if (givenUnit === "liters" || givenUnit === "l"){
+                return num / 3.7854 + " gallons.";
+            } else if (givenUnit === "gallons" || givenUnit === "gal"){
+                return num * 3.7854 + " liters.";
+            } else if (givenUnit === "miles" || givenUnit === "mi"){
+                return num * 1.609 + " kilometers.";
+            } else if (givenUnit === "km" || givenUnit === "kilometers"){
+                return num / 1.609 + " miles.";
+            } else {
+                return "No valid unit to convert.";
+            }
+        }
+
+        // function milesToKm(dist, isLiters){
+        //     if (isLiters === true) {
+        //         return vol / 3.8 + " gallons."; //This is liter conversion to gallons
+        //     } else {
+        //         return vol * 3.8 + " liters." //This is gallon conversion to liters
+        //     }
+        // }
+
+            //
+            //     function litersGallons (liquid, gal) {
+            //     if (gal === true) {
+            //         return gal * 3.8 + " liters."
+            //     } else {
+            //         return l / 3.8 + " gallons."
+            //     }
+            // }
+
+// Create a function that takes a string and returns it in upper case.
+        function toUpperCase (string) {
+            return string.toUpperCase();
+        }
+// Create a function that takes a string and returns it in lower case.
+        function toLowerCase(string){
+            return string.toLowerCase();
+        }
+// Create a function that takes a string and trims any leading or trailing blank spaces.
+        function stringTrim (string) {
+            return string.trim();
+        }
+// Create a function that takes a string and returns the number of characters in that string.
+        function stringNum (string) {
+            return string.length;
+        }
+// Bonus Challenges:
+// Create a function that takes a single character and a string and returns the index of the specified character in that string.
+        function charString (char, string) {
+            // char = char.toLowerCase();
+            // string = string.toLowerCase();
+            return string.indexOf(char);
+        }
+// Create a function that takes three strings and returns a copy of the first string with the first instance of the second string substituted for the characters of the third string.
+        function stringReplace(string1, string2, string3) {
+            // string1 = string1.toLowerCase();
+            // string2 = string2.toLowerCase();
+            // string3 = string3.toLowerCase();
+            return `${string1.replace(string2, string3)}`;
+        }
+// Do the same, but replace all instances of the second string with the characters of the third string.
+        function secondStringReplace (string1, string2, string3) {
+
+        }
+// Create a function that takes a string and two numbers and returns the subset of the original string assuming the two numbers are indexes.
+
+// == VS. ===
+        let numericString = "42";
+        let theAnswer = 42;
+
+        // numericString == theAnswer but numericString doesn't === theAnswer (numericString == theAnswer ** numericString !== theAnswer)
+
+        function dataType(value) {
+            return isNaN(value);
+        }
+
+        function isNumber(value) {
+            return typeof value === "number";
+        }
 
       </script>
   </body>
