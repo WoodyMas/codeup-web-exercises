@@ -221,11 +221,13 @@
             return string.indexOf(char);
         }
 // Create a function that takes three strings and returns a copy of the first string with the first instance of the second string substituted for the characters of the third string.
+
         function stringReplace(string1, string2, string3) {
             // string1 = string1.toLowerCase();
             // string2 = string2.toLowerCase();
             // string3 = string3.toLowerCase();
             return `${string1.replace(string2, string3)}`;
+
         }
 // Do the same, but replace all instances of the second string with the characters of the third string.
         function secondStringReplace (string1, string2, string3) {
@@ -233,7 +235,7 @@
         }
 // Create a function that takes a string and two numbers and returns the subset of the original string assuming the two numbers are indexes.
 
-// == VS. ===
+//    equality VS. strict equality
         let numericString = "42";
         let theAnswer = 42;
 
@@ -246,6 +248,8 @@
         function isNumber(value) {
             return typeof value === "number";
         }
+
+
 
       </script>
   </body>
