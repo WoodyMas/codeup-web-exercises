@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello (name) {
-    return `Hello ${name}`;
+    return `Hello, ${name}!`;
 }
 
 
@@ -54,8 +54,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo (num) {
-    return num === 2;
+function isTwo (number) {
+    return number === 2;
 }
 
 console.log(isTwo(random));
@@ -72,7 +72,7 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-const calculateTip = function(tipPercent, billTotal) {
+function calculateTip (tipPercent, billTotal) {
     return parseFloat(tipPercent).toFixed(2) * parseFloat(billTotal).toFixed(2);
 }
 
@@ -88,9 +88,9 @@ console.log(userBill);
 let userTipPercent = prompt("Enter the tip percentage you would like to apply");
 console.log(userTipPercent);
 
-let tipAmount = calculateTip(userBill, userTipPercent);
+let tipAmount = calculateTip(userBill/100, userTipPercent);
 
-alert(tipAmount + " is the tip you will have to pay.");
+alert("$" + tipAmount.toFixed(2) + " is the tip you will have to pay.");
 
 
 /**
@@ -115,4 +115,8 @@ alert(tipAmount + " is the tip you will have to pay.");
 function applyDiscount(originalPrice, discountPercent) {
     return originalPrice -(originalPrice * discountPercent);
 }
-
+//
+// How to push?
+//     git add -A
+// git commit -m "Commit message"
+// git push origin main
