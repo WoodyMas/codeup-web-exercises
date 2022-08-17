@@ -1,52 +1,50 @@
-// Create a file named while.js in the js directory.
-//
 // Create a while loop that uses console.log() to create the output shown below.
 
-            // 2
-            // 4
-            // 8
-            // 16
-            // 32
-            // 64
-            // 128
-            // 256
-            // 512
-            // 1024
-            // 2048
-            // 4096
-            // 8192
-            // 16384
-            // 32768
-            // 65536 (16th Power)
+// 2
+// 4
+// 8
+// 16
+// 32
+// 64
+// 128
+// 256
+// 512
+// 1024
+// 2048
+// 4096
+// 8192
+// 16384
+// 32768
+// 65536 (16th Power)
 
 //console.log(Math.pow(num, 16)); // See if 2 to 16th Power is 65536
 
 
-    // let num = 2;
-    // let powr = 1;
-    //
-    //
-    // while (powr <= 16) {
-    //     let newNum = Math.pow(num, powr);
-    //     console.log(newNum);
-    //     powr++;
-    // }
+// let num = 2;
+// let powr = 1;
+//
+//
+// while (powr <= 16) {
+//     let newNum = Math.pow(num, powr);
+//     console.log(newNum);
+//     powr++;
+// }
 
 
 
 
 
-    // let number = Math.ceil(Math.random() * 6);
-    // let guess;
-    // console.log(guess)
-    //
-    // do {
-    //     guess = parseInt(prompt("Enter a number between 1 and 6"));
-    //     console.log(`Guessed number ${guess}, random number ${number}`);
-    //
-    // } while (guess !== number);
-    // console.log(`Guessed number ${guess}, random number ${number}`);
-    // alert(`Your guess of ${guess} matches the number ${number}`)
+// let number = Math.ceil(Math.random() * 6);
+// let guess;
+// console.log(guess)
+//
+// do {
+//     guess = parseInt(prompt("Enter a number between 1 and 6"));
+//     console.log(`Guessed number ${guess}, random number ${number}`);
+//
+// } while (guess !== number);
+// console.log(`Guessed number ${guess}, random number ${number}`);
+// alert(`Your guess of ${guess} matches the number ${number}`)
 
 // An ice cream seller can't go home until she sells all of her cones.
 // First write enough code that generates a random number between 50 and 100 representing the amount of cones to sell before you start your loop.
@@ -107,21 +105,21 @@
 /* clientCones will equal a random num from 1 - 5, but I need another variable to log which customer applies to each
  instance of the clientCone being re-rolled */
 
-    // console.log(`You have ${allCones} left.`);
-    // do {
-    //     console.log(`There are ${leftOverCones} left.`);
-    //     if (leftOverCones > clientCones) {
-    //         console.log(`A customer has bought ${clientCones} cones, which leaves you with ${leftOverCones} cones.`)
-    //
-    //     } else {
-    //         console.log(`You cannot sell ${clientCones} cones because you only have ${leftOverCones} cones left.`)
-    //         break;
-    //     }
-    //     console.log(`There are ${leftOverCones} left.`)
-    //
-    // } while (leftOverCones > 0);
-    //
-    // console.log(`All ${allCones} cones sold! Congratulations!`);
+// console.log(`You have ${allCones} left.`);
+// do {
+//     console.log(`There are ${leftOverCones} left.`);
+//     if (leftOverCones > clientCones) {
+//         console.log(`A customer has bought ${clientCones} cones, which leaves you with ${leftOverCones} cones.`)
+//
+//     } else {
+//         console.log(`You cannot sell ${clientCones} cones because you only have ${leftOverCones} cones left.`)
+//         break;
+//     }
+//     console.log(`There are ${leftOverCones} left.`)
+//
+// } while (leftOverCones > 0);
+//
+// console.log(`All ${allCones} cones sold! Congratulations!`);
 
 //
 // let allCones = Math.floor(Math.random() * 51) + 50;
@@ -137,4 +135,3 @@
 //     console.log(`${allCones} cones left.`)
 // } while (allCones > 0);
 // console.log(`All cones sold!`);
-
