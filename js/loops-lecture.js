@@ -80,3 +80,27 @@ let slices = 4;
 //     }
 // }
 
+// let count = 100;
+//
+// while (count >= 0) {
+//     console.log(count);
+//
+//     count = count -1;
+// }
+//
+// for (let count = 100; count >= 0; count--) {
+//     console.log(count);
+// }
+
+//
+// /* for (#initialization; #condition#; #changing value) {
+//     body
+// }
+// */
+// for (let i = 100; i >= 0; i--){
+//     console.log(i);
+// }
+
+// for (let i = 0; i < 100; i++) {
+//     console.log(i)
+// }
