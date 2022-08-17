@@ -53,23 +53,88 @@
 // Inside of the loop your code should generate another random number between 1 and 5, simulating the amount of cones being bought by her clients.
 // Use a do-while loop to log to the console the amount of cones sold to each person.
 // The below code shows how to get the random numbers for this exercise.
+//
+// // This is how you get a random number between 50 and 100
+// let allCones = Math.floor(Math.random() * 51) + 50;
+//
+// // This expression will generate a random number between 1 and 5
+// let clientCones = Math.floor(Math.random() * 5) + 1;
+//
+// let leftOverCones = allCones - clientCones;
+//
+// do {
+//
+//     console.log(`You have ${leftOverCones} cones remaining.`);
+//
+//     //If the cones left are less than what is ordered
+//     if (clientCones < leftOverCones) {
+//         console.log(`You have sold ${clientCones} cones. You now have ${leftOverCones} cones remaining.`);
+//
+//     } else if (clientCones > leftOverCones ){
+//         console.log(`You cannot sell ${clientCones} cones because you only have ${leftOverCones} cones.`)
+//     } else {
+//         continue;
+//     }
+//
+// } while (leftOverCones > 0);
+// console.log(`You sold all all ${allCones} cones!`);
 
-// This is how you get a random number between 50 and 100
-let allCones = Math.floor(Math.random() * 50) + 50;
 
-// This expression will generate a random number between 1 and 5
-let clientCones = Math.floor(Math.random() * 5) + 1;
+// let client = 1;
 
-let leftOverCones = allCones - clientCones;
 
-do {
 
-    if (leftOverCones === 0 || leftOverCones < 0) {
-        alert("You have run out of cones to sell.");
-        break;
-    } else {
-        console.log(`There are ${leftOverCones} cones left to sell.`)
-    }
+// console.log(`You have ${allCones} left.`);
+//     do {
+//         leftOverCones = allCones - clientCones;
+//         console.log(`A customer has bought ${clientCones} cones, leaving you with ${leftOverCones} cones remaining.`)
+//         // If leftOverCones is less than clientCones, log the message and break.
+//         if (leftOverCones < clientCones) {
+//             console.log(`You cannot sell ${clientCones} cones, because you only have ${leftOverCones} cones remaining.`);
+//             leftOverCones = leftOverCones - clientCones;
+//
+//             break;
+//         } else {
+//             continue;
+//         }
+//
+//
+//
+//     } while (leftOverCones > 0); // Do while allCones is more than 0
 
-} while (leftOverCones )
-alert("All cones have been sold!");
+
+// I need to use the variable allCones as the starting #
+/* clientCones will equal a random num from 1 - 5, but I need another variable to log which customer applies to each
+ instance of the clientCone being re-rolled */
+
+    // console.log(`You have ${allCones} left.`);
+    // do {
+    //     console.log(`There are ${leftOverCones} left.`);
+    //     if (leftOverCones > clientCones) {
+    //         console.log(`A customer has bought ${clientCones} cones, which leaves you with ${leftOverCones} cones.`)
+    //
+    //     } else {
+    //         console.log(`You cannot sell ${clientCones} cones because you only have ${leftOverCones} cones left.`)
+    //         break;
+    //     }
+    //     console.log(`There are ${leftOverCones} left.`)
+    //
+    // } while (leftOverCones > 0);
+    //
+    // console.log(`All ${allCones} cones sold! Congratulations!`);
+
+//
+// let allCones = Math.floor(Math.random() * 51) + 50;
+// do {
+//     let conesWanted = Math.floor(Math.random() * 5) + 1;
+//
+//         if (conesWanted > allCones) {
+//             console.log(`Cannot sell ${conesWanted} cones because you have ${allCones}`);
+//         } else {
+//             console.log(`${conesWanted} cones sold...`);
+//             allCones = allCones - conesWanted;
+//         }
+//     console.log(`${allCones} cones left.`)
+// } while (allCones > 0);
+// console.log(`All cones sold!`);
+
