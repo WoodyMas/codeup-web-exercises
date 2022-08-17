@@ -2,6 +2,8 @@
 
 /* ########################################################################## */
 
+/* ######################################### Conditional Lecture ##################################################### */
+
 // let flavor = prompt("What flavor ice cream do you like?");
 //
 // flavor = flavor.toLowerCase();
@@ -74,6 +76,9 @@
 //     alert("There is only chocolate. Try again.");
 // }
 
+/* ##################################################################################################################### */
+/* ############################################ Exercises ############################################################## */
+/* ##################################################################################################################### */
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
@@ -121,14 +126,17 @@
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
 let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-let randomColor = console.log(colors[Math.floor(Math.random() * colors.length)] + " is your random color.");
+let randomColor = (colors[Math.floor(Math.random() * colors.length)]);
+
+console.log(`Your random color is ${randomColor}`);
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
 console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
@@ -250,8 +258,12 @@ function calculateTotal (luckyNum, totalAmount) {
 
     }
 }
-
-
+console.log(`Lucky num 0 with a price of $100: ${calculateTotal(0, 100)}`);
+console.log(`Lucky num 1 with a price of $100: ${calculateTotal(1, 100)}`);
+console.log(`Lucky num 2 with a price of $100: ${calculateTotal(2, 100)}`);
+console.log(`Lucky num 3 with a price of $100: ${calculateTotal(3, 100)}`);
+console.log(`Lucky num 4 with a price of $100: ${calculateTotal(4, 100)}`);
+console.log(`Lucky num 5 with a price of $100: ${calculateTotal(5, 100)}`);
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -297,39 +309,65 @@ console.log(totalBill);
  * HINT: The way we prompt for a value could be improved
  */
 
-let decision = confirm("Would you like to enter a number?")? parseFloat(prompt("Please enter a number.")): alert("You don't want to enter a number I see...");
+let wantsToEnterNumber = confirm("Would you like to enter a number?")? parseFloat(prompt("Please enter a number.")): alert("I guess you don't want to enter a number :(");
 
 function isNumber (value) {
-    if (parseFloat(value) !== NaN || typeof (parseFloat(value)) === "boolean") {
-        return value;
-    } else {
-        alert("The input value is not a number")
-    }
+    if (parseFloat(value) === NaN || parseFloat(value) === null || parseFloat(value) === undefined) {
+        return false;
+}   else {
+    return value;
+}
 }
 
-function userDecision (userNum) {
-    let num1 = isNumber(userNum)
-    if (num1 > 0) {
-        alert("The number you entered is positive.");
-    } else if (num1 < 0) {
-        alert("The number is negative.");
+function userInput (num1) {
 
-    } else {
-        alert("The number isn't negative or positive.");
-    }
-    alert(`Your number + 100 is ${(num1 + 100)}`);
-
-    if (num1 %2 === 0 && num1 !== 0) {
-        alert("The number is even.");
-    } else if (num1 === 0) {
-        alert("The number is 0, and would destroy the fabric of reality if we tried to determine whether or not it is even or odd.");
-    }
-    else {
-        alert("The number is odd.");
-    }
 }
 
-userDecision(decision);
+function isEven (val) {
+    return val %2 === 0;
+}
+
+
+// let decision = confirm("Would you like to enter a number?")? parseFloat(prompt("Please enter a number.")): alert("You don't want to enter a number I see...");
+//
+// function isNumber (value) {
+//     if (parseFloat(value) !== NaN || typeof (parseFloat(value)) === "boolean") {
+//         return value;
+//     } else {
+//         alert("The input value is not a number")
+//     }
+// }
+//
+// function userDecision (userNum) {
+//     let num1 = isNumber(userNum)
+//     if (num1 > 0) {
+//         alert("The number you entered is positive.");
+//     } else if (num1 < 0) {
+//         alert("The number is negative.");
+//
+//     } else {
+//         alert("The number isn't negative or positive.");
+//     }
+//     if (num1 !== NaN || num1 !== null || num1 !== undefined || num1 !== "") {
+//         alert(`Your number + 100 is ${(num1 + 100)}`);
+//     } else {
+//         alert("The input could not be added to 100.")
+//     }
+//
+//     if (num1 %2 === 0 && num1 !== 0) {
+//         alert("The number is even.");
+//     } else if (num1 === 0) {
+//         alert("The number is 0, and would destroy the fabric of reality if we tried to determine whether or not it is even or odd.");
+//     }
+//     else {
+//         alert("The number is odd.");
+//     }
+// }
+
+userInput(wantsToEnterNumber);
+
+
+
 //
 //     git add .
 //     git commit -m "your comment here"
