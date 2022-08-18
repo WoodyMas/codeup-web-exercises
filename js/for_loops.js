@@ -71,17 +71,30 @@
 
 
 
-let n = 9; // height of pattern
-let string = "";
-// External loop
-for (let i = 1; i <= n; i++) {
-    // Internal loop
-    for (let j = 1; j <= i; j++) {
-        string += i;
-    }
-    string += "\n";
-}
-console.log(string);
+// let n = 9; // height of pattern
+// let string = "";
+// // External loop
+// for (let i = 1; i <= n; i++) {
+//     // Internal loop
+//     for (let j = 1; j <= i; j++) {
+//         string += i;
+//     }
+//     string += "\n";
+// }
+// console.log(string);
+//
+// for(let i = 1, n = 9, string = ""; i <= n; i++){
+//     for(let j=1; j <= i; j++){
+//         string += j;
+//     }
+//     string += "\n";
+//     console.log(string);
+// }
+
+// // BEST METHOD
+// for (let i =1; i<= 9; i++) {
+//     console.log(i.toString().repeat(i));
+// }
 
 // 1
 // 22
@@ -92,3 +105,7 @@ console.log(string);
 // 7777777
 // 88888888
 // 999999999
+
+
+
+
