@@ -72,7 +72,7 @@
 
 let userNum = prompt("Please enter an odd number between 0 and 50.");
 
-for (userNum; userNum %2 === 0 || userNum < 0 || userNum > 50; alert("Sorry but the number you entered is either negative, even, or over 50. Try again.")){
+for (userNum; userNum %2 === 0 || userNum < 0 || userNum > 50 || typeof userNum !== "number"; alert("Sorry but you did not enter an odd number between 0 and 50.")){
     userNum = prompt("Why don't we try again? Please pick an odd number between 0 and 50.");
     if (userNum %2 === 1 && userNum > 0 && userNum < 50) {
         console.log(`User's number is ${userNum}`);
