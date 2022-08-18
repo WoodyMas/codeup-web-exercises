@@ -49,22 +49,45 @@
 // User's chosen number is the number that will be skipped
 // Need a message to inform user of invalid input if the number chosen is even or over 50/ under 0
 
-let userNum = prompt("Please enter an odd number between 0 and 50");
 
-if (userNum < 0 || userNum %2 === 0 || userNum > 50) {
-    alert("Sorry but the number you entered is either negative, even, or over 50. Try again.");
-} else {
-    console.log(`User's chosen number: ${userNum}`);
+// let userNum = prompt("Please enter an odd number between 0 and 50");
+//
+// if (userNum < 0 || userNum %2 === 0 || userNum > 50) {
+//     alert("Sorry but the number you entered is either negative, even, or over 50. Try again.");
+//     let newNum = prompt("Please enter an odd number between 0 and 50");
+//     newNum = userNum
+// } else {
+//     console.log(`User's chosen number: ${userNum}`);
+// }
+//
+// for (let i = 1; i <= 50; i += 2) {
+//
+//     if(i == userNum) {
+//         console.log(`User's number: ${userNum} matches the odd number: ${i}. Skipping this list item.`);
+//         continue;
+//     } else {
+//         console.log(`Here is an odd number: ${i}`);
+//     }
+// }
+
+let userNum = prompt("Please enter an odd number between 0 and 50.");
+
+for (userNum; userNum %2 === 0 || userNum < 0 || userNum > 50; alert("Sorry but the number you entered is either negative, even, or over 50. Try again.")){
+    userNum = prompt("Why don't we try again? Please pick an odd number between 0 and 50.");
+    if (userNum %2 === 1 && userNum > 0 && userNum < 50) {
+        console.log(`User's number is ${userNum}`);
+        break;
+
+    } else {
+        continue;
+    }
 }
 
 for (let i = 1; i <= 50; i += 2) {
-
-    if(i == userNum) {
+    if (parseFloat(userNum) === i){
         console.log(`User's number: ${userNum} matches the odd number: ${i}. Skipping this list item.`);
         continue;
     } else {
         console.log(`Here is an odd number: ${i}`);
     }
 }
-
-
