@@ -129,5 +129,14 @@ console.log(groceryList);
 //     console.log(`item number ${index}: ${price}`)
 // });
 
+groceryList = groceryList.join(' ').toLowerCase().split(' ').sort();
+console.log(groceryList);
 
+let quote = "All the world's a play";
+let quoteArray = quote.split(` `)
+console.log(quoteArray);
+quoteArray = quoteArray.reverse();
+console.log(quoteArray);
+quote = quoteArray.join(' ').toLowerCase();
+console.log(quote);
 

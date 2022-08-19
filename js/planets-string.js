@@ -34,4 +34,15 @@
     // newPlanetArray.join(`<br>`);
     console.log(newPlanetArray.join(`<br>`));
 
+    let planetsDiv = document.getElementById("planetsDiv");
+    let listPlanetString = `|Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune`;
+    let newListPlanet = listPlanetString.split(`|`).join(`<li>`);
+    newListPlanet.split(``).join(`<ul>`);
+    planetsDiv.innerHTML = newListPlanet;
+
+
+
+
+    console.log(newListPlanet)
+
 })();
