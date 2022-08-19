@@ -39,11 +39,13 @@
      * Refactor your above code to use a `forEach` loop
      */
 
+
     console.log(` `)
     console.log(`for`)
-    names.forEach(function (element, index, array){
-        console.log(`element ${index} has the name ${element}`);
-    });
+    // names.forEach(function (element, index, array){
+    //     console.log(`element ${index} has the name ${element}`);
+    // });
+    names.forEach(name => console.log(name));
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -69,16 +71,17 @@
 
     let nums = [1, 2, 3, 4, 5];
 
-    function first (array) {
-        return array[0];
-    }
-    function second (array) {
-        return array[1];
-    }
 
-    function last (array) {
-        return array[array.length-1];
-    }
+    // function first (array) {
+    //     return array[0];
+    // }
+    // function second (array) {
+    //     return array[1];
+    // }
+    //
+    // function last (array) {
+    //     return array[array.length-1];
+    // }
 
     console.log(first(nums));
     console.log(second(nums));

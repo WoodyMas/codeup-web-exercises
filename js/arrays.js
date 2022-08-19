@@ -42,9 +42,48 @@
 // Each item in an array is called an element ("bread", "eggs", "butter", "milk")
 // Arrays always start with the 0 index, not 1.
 
-// let groceryList = ["bread", "eggs", "butter", "milk"];
+let groceryList = ["bread", "eggs", "butter", "milk"];
 // // Element -> E#    // E0   //E1    //E2      //E3
+groceryList.push("Potatoes", "serranos"); //.push adds an element to the end of an array
+console.log(groceryList);
+groceryList.pop() // .pop removes an element from the end of an array
+console.log(groceryList);
+
+groceryList.unshift("sliced cheddar"); // .unshift adds an element to the beginning of the array
+console.log(groceryList);
+groceryList.shift(); // removes an element from the beginning of the array
+console.log(groceryList);
 //
+
+let indexOfButter = groceryList.indexOf("butter"); // finds index of the entered string if string matches with an element
+console.log(indexOfButter + " is the index of butter");
+
+groceryList[indexOfButter] = "peanut butter"; // we just changed butter to peanut butter without needing to know the index
+console.log(groceryList);
+
+// let bread = groceryList[0];
+groceryList[0] = "avocados";
+console.log(groceryList)
+
+
+let firstHalfOfGroceryList = groceryList.slice(0, 2);
+console.log(firstHalfOfGroceryList)
+
+let secondHalfOfGroceryList = groceryList.slice(2);
+console.log(secondHalfOfGroceryList);
+
+firstHalfOfGroceryList.push("butter");
+
+groceryList = firstHalfOfGroceryList.concat(secondHalfOfGroceryList);
+console.log(groceryList);
+
+groceryList.reverse();
+console.log(groceryList);
+
+groceryList.sort();
+console.log(groceryList);
+console.log(groceryList.reverse());
+
 // for (let i = 0; i < groceryList.length; i++) {
 //     if (i === groceryList.length - 1) {
 //         console.log(`I have to buy ${groceryList[i]}.`);
@@ -54,6 +93,26 @@
 // }
 
 let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+prices.sort(function (a, b){
+    return a-b;
+});
+console.log(prices);
+groceryList[3] = "Blueberries";
+console.log(groceryList);
+console.log(groceryList.sort());
+
+let newList = [];
+// for (let i =0; i < groceryList.length; i++) {
+//     groceryList[i] = groceryList[i].toLowerCase();
+// }
+// console.log(groceryList.sort());
+
+groceryList.forEach((item, index, array) => {
+    array[index] = item.toLowerCase();
+})
+console.log(groceryList);
+
 
 // forEachLoop takes an anonymous function
 // function passed to for each loop has up to three parameters
@@ -66,9 +125,9 @@ let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
     // });
 
 
-prices.forEach((price, index) => {
-    console.log(`item number ${index}: ${price}`)
-});
+// prices.forEach((price, index) => {
+//     console.log(`item number ${index}: ${price}`)
+// });
 
 
 
