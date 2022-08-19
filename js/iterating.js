@@ -67,6 +67,8 @@
         console.log(`The ${index} name is ${name}`);
     });
 
+    let nums = [1, 2, 3, 4, 5];
+
     function first (array) {
         return array[0];
     }
@@ -77,5 +79,9 @@
     function last (array) {
         return array[array.length-1];
     }
+
+    console.log(first(nums));
+    console.log(second(nums));
+    console.log(last(nums));
 
 })();
