@@ -110,7 +110,7 @@ let newList = [];
 
 groceryList.forEach((item, index, array) => {
     array[index] = item.toLowerCase();
-})
+});
 console.log(groceryList);
 
 
