@@ -42,47 +42,47 @@
 // Each item in an array is called an element ("bread", "eggs", "butter", "milk")
 // Arrays always start with the 0 index, not 1.
 
-let groceryList = ["bread", "eggs", "butter", "milk"];
-// // Element -> E#    // E0   //E1    //E2      //E3
-groceryList.push("Potatoes", "serranos"); //.push adds an element to the end of an array
-console.log(groceryList);
-groceryList.pop() // .pop removes an element from the end of an array
-console.log(groceryList);
-
-groceryList.unshift("sliced cheddar"); // .unshift adds an element to the beginning of the array
-console.log(groceryList);
-groceryList.shift(); // removes an element from the beginning of the array
-console.log(groceryList);
+// let groceryList = ["bread", "eggs", "butter", "milk"];
+// // // Element -> E#    // E0   //E1    //E2      //E3
+// groceryList.push("Potatoes", "serranos"); //.push adds an element to the end of an array
+// console.log(groceryList);
+// groceryList.pop() // .pop removes an element from the end of an array
+// console.log(groceryList);
 //
-
-let indexOfButter = groceryList.indexOf("butter"); // finds index of the entered string if string matches with an element
-console.log(indexOfButter + " is the index of butter");
-
-groceryList[indexOfButter] = "peanut butter"; // we just changed butter to peanut butter without needing to know the index
-console.log(groceryList);
+// groceryList.unshift("sliced cheddar"); // .unshift adds an element to the beginning of the array
+// console.log(groceryList);
+// groceryList.shift(); // removes an element from the beginning of the array
+// console.log(groceryList);
+// //
+//
+// let indexOfButter = groceryList.indexOf("butter"); // finds index of the entered string if string matches with an element
+// console.log(indexOfButter + " is the index of butter");
+//
+// groceryList[indexOfButter] = "peanut butter"; // we just changed butter to peanut butter without needing to know the index
+// console.log(groceryList);
 
 // let bread = groceryList[0];
-groceryList[0] = "avocados";
-console.log(groceryList)
+// groceryList[0] = "avocados";
+// console.log(groceryList)
 
 
-let firstHalfOfGroceryList = groceryList.slice(0, 2);
-console.log(firstHalfOfGroceryList)
-
-let secondHalfOfGroceryList = groceryList.slice(2);
-console.log(secondHalfOfGroceryList);
-
-firstHalfOfGroceryList.push("butter");
-
-groceryList = firstHalfOfGroceryList.concat(secondHalfOfGroceryList);
-console.log(groceryList);
-
-groceryList.reverse();
-console.log(groceryList);
-
-groceryList.sort();
-console.log(groceryList);
-console.log(groceryList.reverse());
+// let firstHalfOfGroceryList = groceryList.slice(0, 2);
+// console.log(firstHalfOfGroceryList)
+//
+// let secondHalfOfGroceryList = groceryList.slice(2);
+// console.log(secondHalfOfGroceryList);
+//
+// firstHalfOfGroceryList.push("butter");
+//
+// groceryList = firstHalfOfGroceryList.concat(secondHalfOfGroceryList);
+// console.log(groceryList);
+//
+// groceryList.reverse();
+// console.log(groceryList);
+//
+// groceryList.sort();
+// console.log(groceryList);
+// console.log(groceryList.reverse());
 
 // for (let i = 0; i < groceryList.length; i++) {
 //     if (i === groceryList.length - 1) {
@@ -92,15 +92,15 @@ console.log(groceryList.reverse());
 //     }
 // }
 
-let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
-
-prices.sort(function (a, b){
-    return a-b;
-});
-console.log(prices);
-groceryList[3] = "Blueberries";
-console.log(groceryList);
-console.log(groceryList.sort());
+// let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+//
+// prices.sort(function (a, b){
+//     return a-b;
+// });
+// console.log(prices);
+// groceryList[3] = "Blueberries";
+// console.log(groceryList);
+// console.log(groceryList.sort());
 
 let newList = [];
 // for (let i =0; i < groceryList.length; i++) {
@@ -108,10 +108,10 @@ let newList = [];
 // }
 // console.log(groceryList.sort());
 
-groceryList.forEach((item, index, array) => {
-    array[index] = item.toLowerCase();
-});
-console.log(groceryList);
+// groceryList.forEach((item, index, array) => {
+//     array[index] = item.toLowerCase();
+// });
+// console.log(groceryList);
 
 
 // forEachLoop takes an anonymous function
@@ -129,14 +129,55 @@ console.log(groceryList);
 //     console.log(`item number ${index}: ${price}`)
 // });
 
-groceryList = groceryList.join(' ').toLowerCase().split(' ').sort();
-console.log(groceryList);
+// groceryList = groceryList.join(' ').toLowerCase().split(' ').sort();
+// console.log(groceryList);
 
-let quote = "All the world's a play";
-let quoteArray = quote.split(` `)
-console.log(quoteArray);
-quoteArray = quoteArray.reverse();
-console.log(quoteArray);
-quote = quoteArray.join(' ').toLowerCase();
-console.log(quote);
+// let quote = "All the world's a play";
+// let quoteArray = quote.split(` `)
+// console.log(quoteArray);
+// quoteArray = quoteArray.reverse();
+// console.log(quoteArray);
+// quote = quoteArray.join(' ').toLowerCase();
+// console.log(quote);
+
+
+let wishList = [25, 15, 34, 8, 59];
+
+function checkWishListPrices(wishList) {
+    for (let i = 0; i < wishList.length; i++) {
+        if (wishList[i] > 50) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(checkWishListPrices(wishList));
+
+function checkWishListTotal(wishlist){
+    let total = 0;
+    for (let i = 0; i < wishList.length; i++) {
+        total += wishList[i];
+    }
+    return total <= 100;
+}
+
+console.log(checkWishListTotal(wishList));
+
+function processWishList(wishList, testFunction1, testFunction2) {
+    return testFunction1 && testFunction2;
+}
+
+console.log(processWishList(wishList, checkWishListPrices, checkWishListTotal));
+
+// function zatannaMagic(string) {
+//     let commandArray = string.toLowerCase().split(` `);
+//
+//     for (let i =0; i < commandArray.length; i++){
+//         commandArray.push(commandArray[i].split().reverse().join(''));
+//     }
+//     let command = commandArray.join(' ') + "!";
+//     return command.charAt(0).toUpperCase() + command.slice(1);
+//
+// }
 
