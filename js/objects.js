@@ -455,15 +455,23 @@ console.log(` `)
 //     }
 // }
 
-function showBookInfo(bookObject) {
-    for (let i = 0; i < bookObject.length; i++) {
-        // if (i === bookObject.length-1) {
-            console.log(`Book # ${i + 1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
-        // } else {
-        //     console.log(`Book # ${i + 1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
-        // }
+function showBookInfo(bookObject, index) {
+    // for (let i = 0; i < bookObject.length; i++) {
+    //     // if (i === bookObject.length-1) {
+    //         console.log(`Book # ${i + 1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
+    //     // } else {
+    //     //     console.log(`Book # ${i + 1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
+    //     // }
+    // }
+    if (index !== undefined) {
+        console.log(`Book # ${index+1} \n Title: ${bookObject[index].title} \n Author: ${bookObject[index].author.firstName} ${bookObject[index].author.lastName} \n ---`);
+    } else {
+        console.log(`You didn't specify an index.`)
     }
+
 }
+
+showBookInfo(books, 4);
 
 showBookInfo(books);
 
