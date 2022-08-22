@@ -1,11 +1,118 @@
-// let currentWeather = {
-//     humidity: 77,
-//     temp: 82.33,
-//     feels_like: 88.79,
-//     clouds: 75
-// };
+console.log(` `)
+console.log(`-----------------------------------------------------------------`)
+console.log(`----------------------------------------`)
+console.log(`WEATHER OBJECT LECTURE vvv`)
+console.log(`----------------------------------------`)
+console.log(`----------------------------------------`)
+let currentWeather = {
+    humidity: 77,
+    temp: 82.33,
+    feels_like: 88.79,
+    clouds: 75,
+    description: "cloudy"
+
+};
+console.log(currentWeather.temp);
+console.log(currentWeather.description);
+console.log(currentWeather.feels_like);
+
+console.log(currentWeather["humidity"]);
+let userChoice = "clouds";
+
+console.log(currentWeather[userChoice]);
+
+// userChoice = "temp";
+// console.log(currentWeather[userChoice]);
+
 // console.log(currentWeather.temp);
+// console.log(currentWeather["temp"]);
+
+// console.log(`The current weather is ${currentWeather.temp}`);
+// if (currentWeather.temp > 95) {
+//     console.log(`It's kind of hot.`);
+// } else {
+//     console.log(`It's cool today for Texas.`);
+// }
 //
+// Loop through an array using for in loop
+for (let property in currentWeather) {
+    console.log(`${property}: ${currentWeather[property]}`)
+}
+currentWeather.uvIndex = 9.79;
+console.log(currentWeather.uvIndex);
+
+let hourlyWeather = [
+    {
+        time: "08:00",
+        temperature: 78.91,
+        feels_like: 78.91
+    },
+    {
+        time: "09:00",
+        temperature: 79.57,
+        feels_like: 79.57
+    },
+    {
+        time: "10:00",
+        temperature: 81.46,
+        feels_like: 86.04
+    },
+    {
+        time: "11:00",
+        temperature: 84.49,
+        feels_like: 89.24
+    }
+];
+
+// Loop through an array of objects
+
+// using the for loop
+// for (let i = 0; i < hourlyWeather.length; i++) {
+//     console.log(`At ${hourlyWeather[i].time} the temperature will be ${hourlyWeather[i].temperature} but will feel like ${hourlyWeather[i].feels_like}.`)
+// }
+
+// using the forEach method
+hourlyWeather.forEach(forecast =>
+    console.log(`At ${forecast.time} we can expect a temperature of ${forecast.temperature} which will feel like ${forecast.feels_like}.`)
+);
+
+let texasInfo = [
+    {
+        city: "San Antonio",
+        latitude: 29.423017,
+        longitude: -98.48527,
+        timezone: "America/Chicago",
+        currentWeather: {
+            humidity: 77,
+            temp: 82.33,
+            feels_like: 88.79,
+            clouds: 75
+        }
+    },
+    {
+        city: "Houston",
+        latitude: 29.7915,
+        longitude: -95.093,
+        timezone: "America/Chicago",
+        currentWeather: {
+            humidity: 68,
+            temp: 87.44,
+            feels_like: 97.7,
+            clouds: 75
+        }
+    }
+];
+console.log(`The temperature in ${texasInfo[1].city} is ${texasInfo[1].currentWeather.temp}.`)
+
+console.log(`----------------------------------------`)
+console.log(`----------------------------------------`)
+console.log(`WEATHER OBJECT LECTURE ^^^`);
+console.log(`----------------------------------------`)
+console.log(`-----------------------------------------------------------------`)
+console.log(` `)
+//
+
+
 
     "use strict";
 
@@ -110,7 +217,6 @@
 
     let books = [
 
-
         {title: "The book of John", author: {firstName: "John", lastName: "The Apostle"}},
         {title: "The Amazing Spider-Man", author: {firstName: "Stan", lastName: "Lee"}},
         {title: "The Total Money Makeover", author: {firstName: "Dave", lastName: "Ramsey"}},
@@ -166,7 +272,6 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-     function createBook (title, author, book) {
-
-     }
-
+    //  function createBook (title, author, book){
+    //      return book = book.push({title: "", author: {firstName: "", lastName: ""}})
+    // }
