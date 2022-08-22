@@ -110,7 +110,7 @@ console.log(`WEATHER OBJECT LECTURE ^^^`);
 console.log(`----------------------------------------`)
 console.log(`-----------------------------------------------------------------`)
 console.log(` `)
-//
+console.log(` \n NEXT LECTURE \n`)
 console.log(` `)
 console.log(`-----------------------------------------------------------------`)
 console.log(`----------------------------------------`)
@@ -148,21 +148,75 @@ let monster = {
 
 let controller = {
     attack: function (attacker, defender){
-        console.log(`${defender.name} has ${defender.hitPoints} HP`);
-        console.log(`${attacker.name} attacks!`);
+        let defenderHPBeforeAttack = defender.hitPoints;
         let damage = Math.ceil(Math.random() * attacker.maxDamage);
-        console.log(`${attacker.name} does ${damage} HP of damage!`);
         defender.hitPoints -= damage;
-        console.log(`${defender.name} now has ${defender.hitPoints} HP`);
-        console.log(`------------------------------------------`)
+        view.displayAttackResults(attacker, defender, defenderHPBeforeAttack, damage);
     }
 
 }
 
-controller.attack(fighter, monster);
-controller.attack(monster, fighter);
+// The view object handles output
 
-// fighter.attack();
+let view = {
+    displayAttackResults: function (attacker, defender, defenderHPBeforeAttack, damage) {
+        console.log(`${defender.name} has ${defenderHPBeforeAttack} HP`);
+        console.log(`${attacker.name} attacks!`);
+        console.log(`${attacker.name} does ${damage} HP of damage!`);
+        console.log(`${defender.name} now has ${defenderHPBeforeAttack - damage} HP`);
+        console.log(`------------------------------------------`)
+    }
+}
+
+let model = {
+    fighter: {
+        name: "Arata",
+        hitPoints: 18,
+        maxDamage: 8
+    },
+    monster: {
+        name: "Goblin",
+        hitPoints: 8,
+        maxDamage: 6
+    }
+}
+
+controller.attack(model.fighter, model.monster);
+controller.attack(model.monster, model.fighter);
+
+// Creating objects
+
+// Define an empty object and create properties dynamically
+// let goblin = {};
+// goblin.name = "Goblin"
+
+// create a function that returns objects
+
+function makeMonster (name, hitPoints, maxDamage) {
+    return {
+        name: name, // propertyDefinition: value
+        hitPoints: hitPoints,
+        maxDamage: maxDamage
+    }
+}
+// model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
+// controller.attack(model.hobgoblin, model.fighter);
+
+// Using an object constructor
+// Traditionally the name of a constructor is the capitalized name of what object/model is being constructed
+
+function Monster (name, hitPoints, maxDamage) {
+    this.name = name;
+    this.hitPoints = hitPoints;
+    this.maxDamage = maxDamage;
+}
+
+model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
+controller.attack(model.hobgoblinCaptain, model.fighter);
+
+for (let property in model) {
+    console.log(`${property}: ${model[property].name}`);
+}
 
 console.log(`----------------------------------------`)
 console.log(`----------------------------------------`)
