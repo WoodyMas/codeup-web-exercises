@@ -1,3 +1,7 @@
+// #####################################################################################################################
+// ############################################# LECTURE NOTES #########################################################
+// #####################################################################################################################
+
 console.log(` `)
 console.log(`-----------------------------------------------------------------`)
 console.log(`----------------------------------------`)
@@ -115,7 +119,7 @@ console.log(` `)
 console.log(`-----------------------------------------------------------------`)
 console.log(`----------------------------------------`)
 console.log(`----------------------------------------`)
-console.log(`FIGHTER OBJECT LECTURE ^^^`);
+console.log(`FIGHTER OBJECT LECTURE VVV`);
 console.log(`----------------------------------------`)
 
 let fighter = {
@@ -225,8 +229,13 @@ console.log(`----------------------------------------`)
 console.log(`-----------------------------------------------------------------`)
 console.log(` `)
 
-    "use strict";
-
+// #####################################################################################################################
+// ############################################ OBJECTS EXERCISE #######################################################
+// #####################################################################################################################
+console.log(` \n      ------- `)
+console.log(` \n | OBJECTS EXERCISE | \n`)
+console.log(` \n      ------- `)
+console.log(` `)
 /**
      * TODO:
      * Create an object with firstName and lastName properties that are strings
@@ -288,18 +297,29 @@ console.log(` `)
     // log remain
 
 
-    for (let i = 0; i < shoppers.length; i++) {
+    shoppers.forEach(function (val, i){
         let shopAmount = shoppers[i].amount;
         let discountPref = shoppers[i].amount > 200;
-
         if (discountPref) {
-            console.log(`${shoppers[i].name} is eligible for a discount.`)
-            shopAmount = shopAmount * .12;
-            console.log(`${shoppers[i].name} will save $${shopAmount} after the 12% discount is applied!`)
+            console.log(`${shoppers[i].name} is eligible for a discount.`);
         } else {
-            console.log(`${shoppers[i].name} is not eligible for a discount. ${shoppers[i].name} needs $${200 - shopAmount} more in purchases in order to be eligible.`)
+            console.log(`${shoppers[i].name} is not eligible for a discount. ${shoppers[i].name} needs $${200 - shopAmount} more in purchases in order to be eligible.`);
         }
-    }
+    })
+console.log(` `);
+
+    // for (let i = 0; i < shoppers.length; i++) {
+    //     let shopAmount = shoppers[i].amount;
+    //     let discountPref = shoppers[i].amount > 200;
+    //
+    //     if (discountPref) {
+    //         console.log(`${shoppers[i].name} is eligible for a discount.`)
+    //         shopAmount = shopAmount * .12;
+    //         console.log(`${shoppers[i].name} will save $${shopAmount} after the 12% discount is applied!`)
+    //     } else {
+    //         console.log(`${shoppers[i].name} is not eligible for a discount. ${shoppers[i].name} needs $${200 - shopAmount} more in purchases in order to be eligible.`)
+    //     }
+    // }
 
 
     /** TODO:
@@ -383,6 +403,53 @@ console.log(` `)
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    //  function createBook (title, author, book){
-    //      return book = book.push({title: "", author: {firstName: "", lastName: ""}})
-    // }
+
+    // let books = [
+    //
+    //     {title: "The book of John", author: {firstName: "John", lastName: "The Apostle"}},
+    //     {title: "The Amazing Spider-Man", author: {firstName: "Stan", lastName: "Lee"}},
+    //     {title: "The Total Money Makeover", author: {firstName: "Dave", lastName: "Ramsey"}},
+    //     {title: "Wounded Tiger", author: {firstName: "T Martin", lastName: "Bennett"}},
+    //     {title: "Praying From the Heavenly Realms", author: {firstName: "Kevin", lastName: "Zadai"}},
+    // ]
+
+    // function createBook (title,authorFirstName,authorLastName){
+        //     books.push({
+        //         author: {firstName: authorFirstName,
+        //             lastName: authorLastName
+        //         },
+        //         title: title})
+        //     return {
+        //         author: {firstName: authorFirstName,
+        //             lastName: authorLastName
+        //         },
+        //         title: title}
+        // }
+
+    function createBook (title, authorFirstName, authorLastName) {
+        books.push({
+            title: title,
+            author: {firstName: authorFirstName,
+            lastName: authorLastName
+            }
+        })
+        return {
+            title: title,
+            author: {firstName: authorFirstName,
+            lastName: authorLastName
+            }
+        }
+    }
+
+    // model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
+    books[books.length] = new createBook("Hobgoblin's Handbook", "Samuel", "Dickens");
+
+
+
+// * - Create a function named `showBookInfo` that accepts a book object and
+// *   outputs the information described above. Refactor your loop to use your
+// *   `showBookInfo` function.
+// */
+
+
+//
