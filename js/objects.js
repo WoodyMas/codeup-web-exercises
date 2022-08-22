@@ -347,7 +347,6 @@ console.log(` `);
      */
 
     let books = [
-
         {title: "The book of John", author: {firstName: "John", lastName: "The Apostle"}},
         {title: "The Amazing Spider-Man", author: {firstName: "Stan", lastName: "Lee"}},
         {title: "The Total Money Makeover", author: {firstName: "Dave", lastName: "Ramsey"}},
@@ -433,16 +432,40 @@ console.log(` `);
             lastName: authorLastName
             }
         })
-        return {
-            title: title,
-            author: {firstName: authorFirstName,
-            lastName: authorLastName
-            }
-        }
+        // return {
+        //     title: title,
+        //     author: {firstName: authorFirstName,
+        //     lastName: authorLastName
+        //     }
+        // }
     }
 
     // model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
-    books[books.length] = new createBook("Hobgoblin's Handbook", "Samuel", "Dickens");
+    createBook("Hobgoblin's Handbook", "Samuel", "Dickens");
+
+
+console.log(` `)
+console.log(` `)
+console.log(`showBookInfo proof of concept VVV \n`);
+console.log(` `)
+
+// function showBookInfo(bookObject){
+//     for (let i = 0; i < bookObject.length; i++) {
+//         console.log(`Book #${i +1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
+//     }
+// }
+
+function showBookInfo(bookObject) {
+    for (let i = 0; i < bookObject.length; i++) {
+        // if (i === bookObject.length-1) {
+            console.log(`Book # ${i + 1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
+        // } else {
+        //     console.log(`Book # ${i + 1} \n Title: ${bookObject[i].title} \n Author: ${bookObject[i].author.firstName} ${bookObject[i].author.lastName}\n ---`);
+        // }
+    }
+}
+
+showBookInfo(books);
 
 
 
@@ -452,4 +475,3 @@ console.log(` `);
 // */
 
 
-//
