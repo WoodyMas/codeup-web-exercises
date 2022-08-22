@@ -111,8 +111,65 @@ console.log(`----------------------------------------`)
 console.log(`-----------------------------------------------------------------`)
 console.log(` `)
 //
+console.log(` `)
+console.log(`-----------------------------------------------------------------`)
+console.log(`----------------------------------------`)
+console.log(`----------------------------------------`)
+console.log(`FIGHTER OBJECT LECTURE ^^^`);
+console.log(`----------------------------------------`)
 
+let fighter = {
+    name: "Arata",
+    hitPoints: 18,
+    maxDamage: 8,
+        // Old news attack method, local to this object. Totally inefficient. Comment out for good measure.
+    // attack: function (opponent) {
+    //     console.log(`${opponent.name} has  ${opponent.hitPoints} HP`)
+    //     console.log(this.name + " attacks!");
+    //     let damage = Math.ceil(Math.random() * this.maxDamage);
+    //     console.log(`${this.name} does ${damage} points of damage!`);
+    //     opponent.hitPoints -= damage;
+    //     console.log(`${opponent.name} now has ${opponent.hitPoints} HP`)
+    // }
+}
 
+let monster = {
+    name: "Goblin",
+    hitPoints: 8,
+    maxDamage: 6,
+        // Old news attack method, local to this object. Totally inefficient. Comment out for good measure.
+    // attack: function (){
+    //     console.log(`${this.name} attacks!`);
+    // }
+}
+
+// Let's create a controller object to handle anything players or game objects do that affects the state of the game.
+// The controller might handle taking user input and calculating the input's effect on the game.
+
+let controller = {
+    attack: function (attacker, defender){
+        console.log(`${defender.name} has ${defender.hitPoints} HP`);
+        console.log(`${attacker.name} attacks!`);
+        let damage = Math.ceil(Math.random() * attacker.maxDamage);
+        console.log(`${attacker.name} does ${damage} HP of damage!`);
+        defender.hitPoints -= damage;
+        console.log(`${defender.name} now has ${defender.hitPoints} HP`);
+        console.log(`------------------------------------------`)
+    }
+
+}
+
+controller.attack(fighter, monster);
+controller.attack(monster, fighter);
+
+// fighter.attack();
+
+console.log(`----------------------------------------`)
+console.log(`----------------------------------------`)
+console.log(`FIGHTER OBJECT LECTURE ^^^`);
+console.log(`----------------------------------------`)
+console.log(`-----------------------------------------------------------------`)
+console.log(` `)
 
     "use strict";
 
