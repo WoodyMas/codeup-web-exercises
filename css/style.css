@@ -1,6 +1,39 @@
-body {
-    background-color: black;
-}
+/*body {*/
+/*    background-color: #36393f;*/
+/*    color: white;*/
+/*    font-size: 27px;*/
+/*}*/
+
+/*div.picture {*/
+
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
+/*div#picture2 {*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
+/*div#picture3 {*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
+/*div#picture4 {*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
+/*section#box {*/
+/*    height: 550px;*/
+/*    width: 695px;*/
+/*    margin: 0px 0px -69px 0px;*/
+
+/*}*/
+/*h1#top {*/
+/*    color: red;*/
+/*}*/
+
+/*body {*/
+/*    color: purple;*/
+/*}*/
 
 div.picture {
 
@@ -25,6 +58,6 @@ section#box {
     margin: 0px 0px -69px 0px;
 
 }
-h1#top {
-    color: red;
-}
+/*h1#top {*/
+/*    color: red;*/
+/*}*/
