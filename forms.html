@@ -1,11 +1,42 @@
-	<!DOCTYPE html>
-	<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-	<head>
-		<meta charset="UTF-8">
-		<title>Forms Exercise</title>
-	</head>
-	<body>
-		<h1>Register With Us!</h1>
+		<!DOCTYPE html>
+		<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+			  xmlns="http://www.w3.org/1999/html">
+		<head>
+			<meta charset="UTF-8">
+			<title>Forms Exercise</title>
+		</head>
+			<body>
+				<form method="POST" action="https://request-inspector.glitch.me/">
+					<fieldset>
+						<legend><h1>Register With Us!</h1></legend>
+						<label for="userName">Email: </label>
+						<input type="text" name="userName" id="userName">
+						<br>
+						<br>
+						<label for="password">Password: </label>
+						<input type="password" id="password">
+						<br>
+						<br>
+						<label for="bio">Anything you would like us to know about you?</label>
+						<br>
+						<br>
+						<textarea id="bio" name="bio"></textarea>
+						<input type="submit">
+					</fieldset>
 
-	</body>
-	</html>
+					<fieldset>
+<!--						How did you hear? -->
+						<input type="radio" name="advert" value="Radio Advertisement" id="radioAdvert"><label for="radioAdvert">Radio Advertisement</label><br>
+						<input type="radio" name="advert" value="Internet Advertisement" id="internetAdvert"><label for="internetAdvert">Internet Advertisement</label><br>
+						<input type="radio" name="advert" value="Billboard" id="billboard"><label for="billboard">Billboard</label><br>
+						<input type="radio" name="newAdvert" value="Other" id="other"><label for="other">Other</label>
+						<br><br>
+
+
+						<input type="submit">
+					</fieldset>
+
+
+				</form>
+			</body>
+		</html>
