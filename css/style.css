@@ -35,29 +35,81 @@
 /*    color: purple;*/
 /*}*/
 
+body {
+    background-color: #36393f;
+    color: white;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
+    font-family: "PT Sans";
+    background-image: url("../img/cat_canvas.png");
+    /*background-repeat: no-repeat;*/
+    background-position: center;
+    /*background-size: cover;*/
+
+}
+
 div.picture {
 
     float: left;
     padding: 5px;
 }
-div#picture2 {
-    float: left;
-    padding: 5px;
-}
-div#picture3 {
-    float: left;
-    padding: 5px;
-}
-div#picture4 {
-    float: left;
-    padding: 5px;
-}
+/*div#picture2 {*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
+/*div#picture3 {*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
+/*div#picture4 {*/
+/*    float: left;*/
+/*    padding: 5px;*/
+/*}*/
 section#box {
     height: 550px;
     width: 695px;
     margin: 0px 0px -69px 0px;
+}
+
+h1#top {
+    color: red;
+    text-align: center;
+}
+
+h2.header {
+    color: greenyellow;
+    text-decoration: underline;
+}
+
+ul>li {
+    list-style-type: square;
+}
+
+
+tr {
+    display: block;
+    width: 500px;
 
 }
-/*h1#top {*/
-/*    color: red;*/
-/*}*/
+td {
+    display: block;
+    width: 100%;
+}
+td:nth-child(-n+4) {
+    float: left;
+    width: 25%;
+}
+
+a:hover {
+    color: greenyellow;
+}
+a:link {
+    color: red;
+}
+a:visited {
+    color: purple;
+}
+a:active {
+    color: white;
+}
+
+a
