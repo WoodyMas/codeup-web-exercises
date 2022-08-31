@@ -6,6 +6,29 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
-div.message-info {
+div.message {
+    padding: .5rem 0 .5rem 0.5rem;
+    width: 37.908rem;
+    border-radius: 3px;
+    border: solid rgb(222, 220, 220) 1px;
+    margin: .6rem;
+}
 
+div.message-info /* BLUE */ {
+    color: rgb(70, 68, 154);
+    background-color: rgb(208, 221, 252);
+
+}
+div.message-success /* GREEN */ {
+    color: rgb(68, 123, 81);
+    background-color: rgb(214, 242, 220);
+
+}
+div.message-warning /* YELLOW */ {
+    color: rgb(155, 140, 71);
+    background-color: rgb(252, 250, 206);
+}
+div.message-error /* RED */ {
+    color: rgb(130, 51, 65);
+    background-color: rgb(244, 212, 215);
 }
