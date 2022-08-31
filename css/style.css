@@ -35,39 +35,57 @@
 /*    color: purple;*/
 /*}*/
 
+
+
 body {
     background-color: #36393f;
     color: white;
+    /*opacity: .7;*/
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
     font-family: "PT Sans";
     background-image: url("../img/cat_canvas.png");
-    /*background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
     background-position: center;
-    /*background-size: cover;*/
+    /*float: ;*/
+    background-size: contain;
 
 }
 
 div.picture {
 
     float: left;
-    padding: 5px;
+    padding: .313rem;
+    background-color: black;
+
 }
+
+/*div#picture {*/
+/*    !*float: left;*!*/
+/*    !*padding: 5px;*!*/
+/*    background-color: black;*/
+/*}*/
+
+
 /*div#picture2 {*/
-/*    float: left;*/
-/*    padding: 5px;*/
+/*    !*float: left;*!*/
+/*    !*padding: 5px;*!*/
+/*    background-color: black;*/
 /*}*/
 /*div#picture3 {*/
-/*    float: left;*/
-/*    padding: 5px;*/
+/*    !*float: left;*!*/
+/*    !*padding: 5px;*!*/
+/*    background-color: black;*/
 /*}*/
 /*div#picture4 {*/
-/*    float: left;*/
-/*    padding: 5px;*/
+/*    !*float: left;*!*/
+/*    !*padding: 5px;*!*/
+/*    background-color: black;*/
 /*}*/
 section#box {
     height: 550px;
     width: 695px;
-    margin: 0px 0px -69px 0px;
+    margin: 0px 0px -4.313rem 0px;
+    /*opacity: .5;*/
 }
 
 h1#top {
