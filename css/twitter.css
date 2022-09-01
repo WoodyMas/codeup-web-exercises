@@ -180,7 +180,7 @@ a { /* DEFAULT */
 }
 
 .container {
-    margin: 2em; /* USER ADDED */
+    margin: 2em 0; /* USER ADDED */
     display: flex;
 }
 
