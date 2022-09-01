@@ -42,11 +42,11 @@ body {
     color: white;
     /*opacity: .7;*/
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
-    font-family: "PT Sans";
+    font-family: "PT Sans", sans-serif;
     background-image: url("../img/cat_canvas.png");
     background-repeat: no-repeat;
     background-position: center;
-    /*float: ;*/
+    /*float: */
     background-size: contain;
 
 }
@@ -96,6 +96,7 @@ h1#top {
 h2.header {
     color: greenyellow;
     text-decoration: underline;
+    /*text-align: center;*/
 }
 
 ul>li {
@@ -103,19 +104,19 @@ ul>li {
 }
 
 
-tr {
-    display: block;
-    width: 500px;
+/*tr {*/
+/*    display: block;*/
+/*    width: 500px;*/
 
-}
-td {
-    display: block;
-    width: 100%;
-}
-td:nth-child(-n+4) {
-    float: left;
-    width: 25%;
-}
+/*}*/
+/*td {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*}*/
+/*td:nth-child(-n+4) {*/
+/*    float: left;*/
+/*    width: 25%;*/
+/*}*/
 
 a:hover {
     color: greenyellow;
@@ -128,4 +129,13 @@ a:visited {
 }
 a:active {
     color: white;
+}
+
+table {
+    border: thin solid white;
+    border-collapse: collapse;
+}
+th, td {
+    border: thin solid white;
+    padding: 10px;
 }
