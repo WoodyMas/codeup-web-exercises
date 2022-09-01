@@ -32,7 +32,7 @@ fieldset {
     width: 80%;
     align-content: center;
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
-
+    margin: 0 auto;
 }
 
 .form-group {
