@@ -161,17 +161,51 @@ a { /* DEFAULT */
 
 .profile-details {/* USER ADDED */
     float: left; /* USER ADDED */
-    width: 25%; /* USER ADDED */
+    margin: 0 .5em; /* USER ADDED */
+    width: calc(25% - 0.5em); /* USER ADDED */
 
 }
 
 .timeline { /* USER ADDED */
     /*float: right;*/
     float: left; /* USER ADDED */
-    width: 50%; /* USER ADDED */
+    margin: 0 .5em; /* USER ADDED */
+    width: calc(50% - 0.5em); /* USER ADDED */
 }
 
 .who-to-follow {
+    float: right; /* USER ADDED */
+    margin: 0 .5em; /* USER ADDED */
+    width: calc(25% - 0.5em); /* USER ADDED */
+}
+
+.container {
+    margin: 2em; /* USER ADDED */
+    display: flex;
+}
+
+.media{
+    width: 100%;
+    background-color: white; /* USER ADDED */
+    border-bottom: 1px solid lightgrey; /* USER ADDED */
+    padding: .5em; /* USER ADDED */
+    overflow: auto; /* USER ADDED */
+}
+
+.media-image {
+    max-width: 50px; /* USER ADDED */
+    margin-top: 1.33em; /* USER ADDED */
     float: left; /* USER ADDED */
-    width: 25%; /* USER ADDED */
+}
+.media-body {
+    float: left; /* USER ADDED */
+    width: calc(100% - 50px); /* USER ADDED */
+}
+.profile-items {
+    /*margin: .5em;*/
+    list-style: none;
+    padding: 0;
+}
+.profile-entry {
+    margin: .5em;
 }
