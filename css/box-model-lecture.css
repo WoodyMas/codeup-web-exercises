@@ -1,0 +1,25 @@
+body {
+    margin: 20px;
+}
+
+#main {
+    box-sizing: border-box;
+    border-radius: 7px;
+    width: 500px;
+    border: 2px solid black;
+    padding: 15px;
+    /*margin: 15px;*/
+    /*box-shadow: -10px -10px 7px darkslategray,*/
+    /*            14px 14px 6px darkcyan;*/
+    margin-top: 75px;
+
+}
+
+p {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 7px;
+    margin: 0 auto;
+}
