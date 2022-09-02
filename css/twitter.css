@@ -174,7 +174,7 @@ a { /* DEFAULT */
 }
 
 .who-to-follow {
-    float: right; /* USER ADDED */
+    float: left; /* USER ADDED */
     margin: 0 .5em; /* USER ADDED */
     width: calc(25% - 0.5em); /* USER ADDED */
 }
