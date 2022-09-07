@@ -38,15 +38,24 @@ h2, h3 {
 
 section {
     /* enter needed declarations here */
+    display: flex;
+    margin: 15px 0;
 }
 
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
+    justify-content: space-between;
+    align-items: center;
+
+
+
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    align-self: flex-start;
+
 }
 
 .purple-box {
@@ -57,10 +66,12 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    flex-grow: .6;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    flex-grow: .4;
 }
 
 .blue-box {
@@ -71,11 +82,14 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    align-items: center;
+    justify-content: flex-end;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-
+    /*align-items: center;*/
+    flex-grow: 1;
 }
 
 .orange-circle {
@@ -91,14 +105,18 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
+    flex-grow: .3;
 }
 
 .large-brown-box:nth-of-type(2) {
     margin: 0 1em;
 }
 
-section:nth-of-type(5) {
+section:nth-of-type(5) { /* Yellow Boxes */
     /* enter needed declarations here */
+    justify-content: space-evenly;
+    margin: 1em 0 1em 0;
+
 }
 
 .yellow-box {
@@ -111,6 +129,9 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .grey-box {
