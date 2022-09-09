@@ -1,0 +1,29 @@
+.Top {
+    display: flex;
+    background-color: grey;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Work Sans, sans-serif;
+}
+.logo {
+    font-size: 3em;
+    padding: .2em;
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+    margin-right: 130px;
+}
+
+a {
+    display: inline-block;
+    padding: .5em;
+}
+
+a:hover {
+    color:blue;
+}
+a:link {
+    color:blueviolet;
+}
