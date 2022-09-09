@@ -1,0 +1,28 @@
+.jumbotron {
+    /*background-image: url("../img/pizza.png");*/
+    /*background-size: cover;*/
+    /*height: 346px;*/
+    /*display: flex;*/
+
+}
+
+#light-title-bar {
+    background-color: lightgrey;
+    opacity: 75%;
+    color: black;
+    text-align: center;
+    /*height: 5%;*/
+
+
+}
+
+#main-heading {
+    /*height: 30%;*/
+    background-image: url("../img/pizza.png");
+    background-size: cover;
+    height: 346px;
+}
+
+.sign-up {
+    text-decoration: none;
+}
