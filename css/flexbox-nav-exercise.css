@@ -27,3 +27,8 @@ a:hover {
 a:link {
     color:blueviolet;
 }
+
+img {
+    height: 5%;
+    width: 5%;
+}
