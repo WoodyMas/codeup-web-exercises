@@ -19,6 +19,7 @@
     let onceASecond = setInterval(
     function updateTimer() {
         if (detonationTimer == 0) {
+            console.log(`Bom exploded`)
             alert('EXTERMINATE!');
             document.body.innerHTML = '';
         } else if (detonationTimer > 0) {
