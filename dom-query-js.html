@@ -59,8 +59,17 @@
         // }
         // let hulkState = theHulk.getAttribute("data-state");
 
-        listItems[0].style.color = "blue";
+        // listItems[0].style.color = "blue";
+        // if (parseFloat(listItems[0].dataset.dbid) === 1) {
+        //     listItems[0].style.color = "blue";
+        // }
 
+        for (let i = 0; i < listItems.length; i++) {
+            let prefItem = parseFloat(listItems[i].dataset.dbid) === 1;
+            if (prefItem) {
+                listItems[i].style.color = "blue";
+            }
+        }
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
