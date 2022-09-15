@@ -26,29 +26,52 @@
 </p>
 
 <script>
-    (function() {
+
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // var mainHeader = ;
+        let mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-
+        mainHeader.innerText = "JavaScript is Cool";
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
+        // paragraphs[i].style.color = colorInput.value;
+        subHeader.style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        let listItems = document.getElementsByTagName("li");
+
 
         // TODO: Set text color on every other list item to grey
+        for (let i = 0; i < listItems.length; i++) {
+            // let newColor = listItems[i + 1].style.color = "grey";
+            if (i %2 !== 0) {
+                listItems[i].style.color = "grey";
+            }
+        }
+
         // TODO: Set text color of li with dbid = 1 to blue
+        // let hulkState = theHulk.dataset.state;
+        // if (hulkState === "hulk") {
+        //     theHulk.dataset.state = "Bruce Banner";
+        // }
+        // let hulkState = theHulk.getAttribute("data-state");
+
+        listItems[0].style.color = "blue";
+
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
+
+
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-    })();
+        let firstSubParagraph = subParagraphs[0];
+        firstSubParagraph.innerText = "Mission Accomplished";
+
 </script>
 </body>
 </html>
