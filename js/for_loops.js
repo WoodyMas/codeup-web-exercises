@@ -106,6 +106,22 @@
 // 88888888
 // 999999999
 
+let array1 = ["apple", "tomato", "beans", "enchilada", "peer", "yo", "a", "fill"];
 
+
+function findLongest (arr) {
+    let charLength = 0;
+    let longest;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > charLength) {
+            charLength = arr[i].length;
+            longest = arr[i];
+        }
+    }
+
+    console.log(longest);
+
+}
 
 
