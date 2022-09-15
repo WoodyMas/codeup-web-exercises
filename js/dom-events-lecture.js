@@ -24,3 +24,21 @@
 // document.querySelector("button").addEventListener("click", function(){
 //     alert("You clicked me!");
 // })
+
+
+
+
+
+
+// Mini-exercise:
+// Use html and css to create a square with a background color on an html page.
+//     Register an event handler and write its code such that when you click on the square, it
+// alerts that it is a square ("I am a square") and
+// alerts what color it is. ("I am a big hot pink square")
+
+let squareVar = document.querySelector(".square");
+// let squareCol = document.querySelector(".square-color")
+
+squareVar.addEventListener("click", function (){
+    alert(`I am a square with the color value: ${window.getComputedStyle(document.querySelector(".square"), null).getPropertyValue("background-color")}`);
+});
