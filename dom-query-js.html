@@ -52,7 +52,7 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-<script>
+    <script>
 
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
@@ -108,6 +108,11 @@
         let firstSubParagraph = subParagraphs[0];
         firstSubParagraph.innerText = "Mission Accomplished";
 
-</script>
+        // querySelector will select the first item defined: let subParagraphs = document.querySelector("li"); will select the first <li> element
+        // querySelectorAll will select all instances of items defined, as according to CSS definitions. to select all classes, you would use .
+        //          let subParagraphs = document.querySelectorAll(".sub-paragraph") any element with class="sub-paragraph"
+        //           will now be added to an array
+
+    </script>
 </body>
 </html>
