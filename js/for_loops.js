@@ -109,19 +109,60 @@
 let array1 = ["apple", "tomato", "beans", "enchilada", "peer", "yo", "a", "fill"];
 
 
-function findLongest (arr) {
-    let charLength = 0;
-    let longest;
+// function findLongest (arr) {
+//     let charLength = 0;
+//     let longest;
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].length > charLength) {
+//             charLength = arr[i].length;
+//             longest = arr[i];
+//         }
+//     }
+//
+//     console.log(longest);
+//
+// }
 
+let mathArr = [1, 5, 8, 99, 100, 43, 6, 44, 78] //  14
+let mathArr2 = [3, 8, 5] // 16
+            // Total        30
+
+// function addArrays (arr, arr2) {
+//     let arrSum = 0;
+//     let arrSum2 = 0;
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         arrSum += arr[i];
+//     }
+//     // console.log(`arrSum is ${arrSum}`);
+//
+//     for (let j = 0; j < arr2.length; j++) {
+//         arrSum2 += arr2[j];
+//     }
+//     // console.log(`arrSum2 is ${arrSum2}`);
+//
+//     return arrSum + arrSum2;
+// }
+
+// function forLoopTest (arr) {
+//     let test = 0;
+//
+//     for (let i = 100; i > arr.length; i--) {
+//         if (i %2 !== 0) {
+//             console.log(i);
+//         }
+//     }
+// }
+
+// let mathArr = [1, 5, 8, 99, 100, 43, 6, 44, 78]
+
+function newLoopTest (arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].length > charLength) {
-            charLength = arr[i].length;
-            longest = arr[i];
-        }
+        // console.log(i);
+        console.log(`this is index # ${i}`);
     }
-
-    console.log(longest);
-
 }
+
 
 
