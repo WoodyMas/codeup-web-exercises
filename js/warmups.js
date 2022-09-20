@@ -1,6 +1,11 @@
-function isNumber (val) {
-    return !((isNaN(val)) || typeof val === "boolean" || val === null);
-}
+let testArray = [21, 50, 98, 33];
+let testArray2 = [13, 44, 34, 19];
+let testArray3 = [8, 4, 7, 9];
+
+
+// function isNumber (val) {
+//     return !((isNaN(val)) || typeof val === "boolean" || val === null);
+// }
 
 
 // function average (array) {
@@ -412,6 +417,19 @@ let address2 = "5408 Villa Nueva"
  * Notes
  * All test arrays will have at least one element and are valid.
  */
+
+// function minMax (numArray) {
+//     // need to loop through an array to access each element
+//     // need to store the values of each array to be separated for min/max later (create min max variable)
+//     // need to compare each element with another
+//     let min = 0;
+//     let max = 0;
+//     for (let i = 0; i < numArray.length; i++) {
+//         if (numArray)
+//     }
+// }
+
+
 
 // function minMax (numArray) {
 //     let min = 0;
