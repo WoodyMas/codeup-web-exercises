@@ -418,16 +418,32 @@ let address2 = "5408 Villa Nueva"
  * All test arrays will have at least one element and are valid.
  */
 
-// function minMax (numArray) {
-//     // need to loop through an array to access each element
-//     // need to store the values of each array to be separated for min/max later (create min max variable)
-//     // need to compare each element with another
+let warmupArray = [8, 2, 3, 4, 1, 8, 19, 20];
+
+
+// function minMax (arrayOfNumbers) {
+//     let newArr = [];
 //     let min = 0;
 //     let max = 0;
-//     for (let i = 0; i < numArray.length; i++) {
-//         if (numArray)
+//
+//
+//
+//     for (let i = 0; i < arrayOfNumbers.length; i++) {
+//     // We need to loop thru an array
+//     // We need to log/store each index arrayOfNumbers[i]
+//     // We need to compare each index
+//
+//         console.log(parseInt(arrayOfNumbers[i].sort()));
+//
+//     min = arrayOfNumbers[i];
+//     if (min < arrayOfNumbers[i + 1]) {
+//         // console.log(`${min}`);
+//         console.log(Math.min(min, arrayOfNumbers[i +1]));
+//     }
+//
 //     }
 // }
+
 
 
 
@@ -471,7 +487,8 @@ let address2 = "5408 Villa Nueva"
          {name: "water", price: 1},
 
  ];
- // Examples
+// console.log(...drinks);
+// Examples
 // sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}];
 
 function sortDrinkByPrice (drinks) {
@@ -484,3 +501,31 @@ function sortDrinkByPrice (drinks) {
     }
 }
 
+// ################################### Simple for-loop practice ############################
+
+// make a function that outputs 1-10
+
+// function oneToTen (count) {
+//     for(let i = 0; i <= count; i++) {
+//         console.log(i)
+//     }
+// }
+
+// let testArr = [3, 8, 9, 32, 45];
+//
+// function getMinimum(array) {
+//     console.log(...array);
+//     return (Math.min(...array));
+// }
+//
+// function getMaximum(array) {
+//     return (Math.max(...array));
+// }
+//
+// function minMax(newArr) {
+//     let minVal = getMinimum(newArr);
+//     let maxVal = getMaximum(newArr);
+//
+//     newArr = [minVal, maxVal];
+//     console.log(newArr);
+// }
