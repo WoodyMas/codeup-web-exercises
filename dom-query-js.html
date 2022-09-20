@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
+    <style>
+        #buttonsRow {
+            margin: 30px 0 0 0;
+            border: 2px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -14,6 +28,14 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+
+<div id="buttonsRow">
+    <button id="mainHeaderButton">Change the Main Header</button>
+    <button id="colorCycleButton">Cycle Colors</button>
+    <button id="cycleSubParagraphButton">Change Mission Accomplished Paragraph</button>
+    <button id="showOldHTMLButton">Revert back</button>
+</div>
+
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -52,20 +74,98 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+
+
     <script>
 
         "use strict";
+
+// ########################################### HTML Buttons to Variables #########################################################
+
+        let mainHeaderButton = document.getElementById("mainHeaderButton");
+        let colorCycleButton = document.getElementById("colorCycleButton");
+        let cycleSubParagraphButton = document.getElementById("cycleSubParagraphButton");
+        let showOldHTMLButton = document.getElementById("showOldHTMLButton");
+
         // TODO: Uncomment next line and get the main header element by id
         let mainHeader = document.getElementById("main-header");
 
+
+
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerText = "JavaScript is Cool";
+        // mainHeader.innerText = "JavaScript is Cool";
+
+                // squareVar.addEventListener("click", function (e){
+                // alert(`I am a square with the color value: ${window.getComputedStyle(document.querySelector(".square"), null).getPropertyValue("background-color")}`);
+                // document.getElementById("anotherSquare").style.backgroundColor = getComputedStyle(e.target).backgroundColor;
+                // });
+
+                // let theButtonVar = document.getElementById("theButton");
+                //
+                // let buttonClickFunction = function (){
+                //     document.querySelector("p").innerText = "You clicked The Button!";
+                // }
+        let counter = 0;
+        let colorCounter = 0;
+        let subParagraphCounter = 0;
+
+        // function masterCounter (counter) {
+        //     counter++;
+        // }
+
+// ####################################### Main Header Cycle ############################################################
+
+        mainHeaderButton.addEventListener('click', function (e){
+            // alert("Test");
+
+            counter++;
+            console.log(`${counter} count`)
+            if (counter %2 !== 0) {
+                mainHeader.innerText = "JavaScript is cool";
+            } else {
+                mainHeader.innerText = "Hello World!";
+            }
+
+        }); // click change main header button cycles "Hello World" and "JavaScript is cool";
+
+// ############################################## Cycle Colors ###########################################################
+
+// let colorCycleButton = document.getElementById("colorCycleButton");
+
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
         // paragraphs[i].style.color = colorInput.value;
         subHeader.style.color = "blue";
+
+        colorCycleButton.addEventListener('click', function (e,){
+            // let prefItem = 1;
+            // // alert('Test');
+            // colorCounter++
+            // console.log(`${colorCounter} color count`)
+            // if (colorCounter %2 !== 0) {
+            //     subHeader.style.color = "revert";
+            //     for (let i = 0; i < listItems.length; i++) {
+            //         // let newColor = listItems[i + 1].style.color = "grey";
+            //         if (i %2 !== 0) {
+            //             listItems[i].style.color = "black";
+            //         }
+            //     }
+            // } else {
+            //
+            //     subHeader.style.color = "blue";
+            //     for (let i = 0; i < listItems.length; i++) {
+            //         // let newColor = listItems[i + 1].style.color = "grey";
+            //         if (i %2 === 0) {
+            //             listItems[i].style.color = "grey";
+            //         }
+            //     }
+            // }
+
+
+        });
+
 
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName("li");

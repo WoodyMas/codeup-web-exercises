@@ -265,5 +265,58 @@ function beeramid (bonus,price){
 //   lastName: '...',
 // }
 //
+
 // Regardless of the case of the first name and last name input, the output should be in all lower case.
+
+const attendance = {
+    miami: 32789,
+    buffalo: 45678,
+    portland: 24567
+    // total attendance should be 103034
+    // Avg attendance should be 34344.66
+}
+
+
+
+
+// Given the attendance object, write a function that returns the total attendance across all teams.
+
+// function totalAttendance (passedObject) {
+//     let acc = 0;
+//     let attendanceArray = Object.values(passedObject);
+//     for (let i = 0; i < attendanceArray.length; i++) {
+//        acc += attendanceArray[i];
+//     // console.log(`${acc} is the accumulated total.`);
+//     }
+//     console.log(`${acc} is the total`)
+// }
+
+function totalAttendance (attendanceObj){
+    let total =0;
+    for (const prop in attendanceObj) {
+        total += attendanceObj[prop];
+    }
+    return total;
+}
+
+// write a function that returns the average attendance
+
+// function avgAttendance (passedObject) {
+//     let total = totalAttendance(passedObject);
+//     //need a variable to count the number of properties in object
+//     let objectProp = Object.keys(passedObject);
+//
+//     for (let i = 0; i < objectProp.length; i++) {
+//         console.log(`element test: ${i}`)
+//         total += objectProp
+//     } return {
+//         totalAttendance: total,
+//         avgAttendance: total/objectProp.length
+//     }
+//
+//      //This prototype doesn't work :)
+// }
+
+// write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
+
 

@@ -5,9 +5,16 @@
 /*                                             alerts what color it is. ("I am a big hot pink square")*/
 
 .square {
-    border: 1px solid black;
-    width: 120px;
-    height: 120px;
+
     background-color: #3B94D9;
 }
 
+#anotherSquare {
+    border: 1px solid black;
+
+}
+.square, #anotherSquare {
+    border: 1px solid black;
+    width: 120px;
+    height: 120px;
+}
