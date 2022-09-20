@@ -320,3 +320,149 @@ function totalAttendance (attendanceObj){
 // write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
 
 
+/**
+ * Convert Address to Object
+ * Write a function named convertAddressToObject that accepts a string that contains a street number (as a string)
+ * and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+ *
+ * Examples
+ *
+ * >> convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+ * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+ **/
+
+let address = "8646 Sunny Oaks"
+let address2 = "5408 Villa Nueva"
+
+// ##### Example 1
+//     function convertAddressToObject (address) {
+//         let streetNum = address.substring(0, address.indexOf(' '));
+//         let streetName = address.substring(address.indexOf(' ') + 1);
+//             // console.log(address);
+//             return {
+//                 streetNum,
+//                 streetName
+//             }
+//      }
+
+// ##### Example 2
+//     function convertAddressToObject (address) {
+//         let addressArray = address.split(' ');
+//         return {
+//             streetNumber: addressArray[0],
+//             streetName: addressArray.slice(1, addressArray.length).join(' ')
+//         }
+//     }
+
+/**
+ * Count total pets
+ * Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets'
+ * property for their owned pets. The function should return the sum of every object's numPets property.
+ *
+ * Examples
+ *
+ * >> totalPets([
+ *       {name: 'Fernando Mendoza', pets: 1},
+ *       {name: 'Douglas Hirsh', pets: 8},
+ *       {name: 'Kenneth Howell', pets: 2}
+ *    ]) ➞ 11
+ */
+
+    let totalPetsVar = [
+        {name: 'Fernando Mendoza', pets: 1},
+        {name: 'Douglas Hirsh', pets: 8},
+        {name: 'Kenneth Howell', pets: 2}
+    ]
+
+// ###### For Loop
+//     function countTotalPets (obj) {
+//         let total = 0;
+//         // let petProp = obj.pets;
+//         for (let i = 0; i < obj.length; i++) {
+//             total += obj[i].pets;
+//         }
+//         return total;
+//     }
+
+// ###### forEach Loop
+// function countTotalPets (obj) {
+//     let total = 0;
+//     obj.forEach(function (object) {
+//         total += object.pets;
+//     });
+//     return total;
+// }
+
+// ###### reduce Function
+// function totalPets (arrayOfObjects) {
+//         return arrayOfObjects.reduce(function (acc, currentVal){
+//             return acc + currentVal.pets;
+//         }, 0)
+// }
+
+/**
+ * Find the Smallest and Biggest Numbers
+ * Create a function named minMax that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+ *
+ * Examples
+ * >> minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+ * >> minMax([2334454, 5]) ➞ [5, 2334454]
+ * >> minMax([1]) ➞ [1, 1]
+ *
+ * Notes
+ * All test arrays will have at least one element and are valid.
+ */
+
+// function minMax (numArray) {
+//     let min = 0;
+//     let max = 0;
+//     for (let i = 0; i < numArray.length; i++){
+//         m
+//     }
+// }
+
+/**
+ * Filter out Strings from an Array
+ * Create a function named filterArray that takes an array of non-negative integers and strings and return a new array without the strings.
+ *
+ * Examples
+ *
+ * >> filterArray([1, 2, "a", "b"]) ➞ [1, 2]
+ * >> filterArray([1, "a", "b", 0, 15]) ➞ [1, 0, 15]
+ * >> filterArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
+ *
+ * Notes
+ * Zero is a non-negative integer.
+ * The given array only has integers and strings.
+ * Numbers in the array should not repeat.
+ * The original order must be maintained.
+ */
+//
+// * Drink Sorting
+// * You will be given an array of drinks, with each drink being an object with two properties: name and price.
+// * Create a function named sortDrinkByPrice that has the drinks array as an
+// * argument and return the drinks objects sorted by price in ascending order.
+// *
+// * Assume that the following array of drink objects needs to be sorted:
+     drinks = [
+         {name: "lemonade", price: 50},
+         {name: "lime", price: 10},
+         {name: "juice", price: 3},
+         {name: "soda", price: 15},
+         {name: "sparkling water", price: 8},
+         {name: "water", price: 1},
+
+ ];
+ // Examples
+// sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}];
+
+function sortDrinkByPrice (drinks) {
+    let acc = 0;
+    for (let i = 0; i < drinks.length; i++) {
+        // console.log(`i is ${i}`);
+        let priceTag = drinks[i].price;
+
+        console.log(`drinks price? ${priceTag}`)
+    }
+}
+
