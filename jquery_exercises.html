@@ -61,7 +61,6 @@
           // Create a jQuery statement to alert the contents of your h1 element(s).
 
 
-
           const $p = $('p'), $li = $('li'), $h1 = $('h1');
 
           $li.css({
@@ -69,8 +68,12 @@
           })
 
           let highlightPLiH1 = $($p, $li, $h1).css({
+              
               'background-color' : 'lightblue'
+
           });
+
+
 
           alert(`${$h1.text()}`);
 
