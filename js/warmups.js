@@ -1,6 +1,6 @@
-let testArray = [21, 50, 98, 33];
-let testArray2 = [13, 44, 34, 19];
-let testArray3 = [8, 4, 7, 9];
+// let testArray = [21, 50, 98, 33];
+// let testArray2 = [13, 44, 34, 19];
+// let testArray3 = [8, 4, 7, 9];
 
 
 // function isNumber (val) {
@@ -24,98 +24,98 @@ let testArray3 = [8, 4, 7, 9];
 //     }
 // }
 
-let array1 = [5, 10, 15];
+// let array1 = [5, 10, 15];
+//
+// let array2 = [100, 88, 23, 50];
+//
+// let array3 = ["Apple pie", 90, 80]
+//
+// function arrayAverage (array) {
+//     if (array === undefined) {return false;}
+//     let total = 0;
+//     array.forEach((element, index) => {
+//        total += element;
+//     });
+//     return total/array.length;
+// }
 
-let array2 = [100, 88, 23, 50];
-
-let array3 = ["Apple pie", 90, 80]
-
-function arrayAverage (array) {
-    if (array === undefined) {return false;}
-    let total = 0;
-    array.forEach((element, index) => {
-       total += element;
-    });
-    return total/array.length;
-}
-
-function average (array) {
-    // an average adds all the elements of an array
-    // and then divides the sum by the number of elements. SIMPLE
-    if (array === undefined) {return false;}
-    let count = 0;
-    let total = 0;
-    array.forEach((element, index) => {
-        // if (typeof parseFloat(index) !== "number") {
-        //     return false;
-        // }
-        total += element;
-        count++;
-    });
-
-    let finalTot = total / count;
-    if (isNaN(finalTot)) {
-        return false
-    } else {
-        return finalTot;
-    }
-
-}
+// function average (array) {
+//     // an average adds all the elements of an array
+//     // and then divides the sum by the number of elements. SIMPLE
+//     if (array === undefined) {return false;}
+//     let count = 0;
+//     let total = 0;
+//     array.forEach((element, index) => {
+//         // if (typeof parseFloat(index) !== "number") {
+//         //     return false;
+//         // }
+//         total += element;
+//         count++;
+//     });
+//
+//     let finalTot = total / count;
+//     if (isNaN(finalTot)) {
+//         return false
+//     } else {
+//         return finalTot;
+//     }
+//
+// }
 
 // Write a function that accepts an array of strings and returns the longest string.
 // If there are two strings of equal length it returns the one with the lowest index.
 // if there are any values that are not strings, return false.
 
-let stringArray = ["buzzworthy", "Jabba", "Darth Maul", "Hondo"];
+// let stringArray = ["buzzworthy", "Jabba", "Darth Maul", "Hondo"];
 
-function longestString (array) {
-    if (array === undefined) {return false;}
-    // array.forEach((element, index) => {
-    //     if (!isNaN(element)) {
-    //         return false;
-    //     } else {
-    //
-    //     }
-    // });
-    let longest = '';
-    for(let i =0; i < array.length; i++){
-        if (array[i].length > longest.length) longest = array[i];
-    }
-    return longest;
-}
+// function longestString (array) {
+//     if (array === undefined) {return false;}
+//     // array.forEach((element, index) => {
+//     //     if (!isNaN(element)) {
+//     //         return false;
+//     //     } else {
+//     //
+//     //     }
+//     // });
+//     let longest = '';
+//     for(let i =0; i < array.length; i++){
+//         if (array[i].length > longest.length) longest = array[i];
+//     }
+//     return longest;
+// }
 
 
 
 // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
-let classes = [
-    {class: "6th grade history", students: 18},
-    {class: "7th grade history", students: 20},
-    {class: "8th grade history", students: 22}
-];
+// let classes = [
+//     {class: "6th grade history", students: 18},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22}
+// ];
 
-console.log("The answer should be " + (18+20+22))
+// console.log("The answer should be " + (18+20+22))
+//
+// function calculateTotalStudents (array) {
+//     if (array === undefined) {return false;}
+//     let total = 0;
+//     array.forEach((element, index) => {
+//         total += element.students;
+//     });
+//     return total;
+// }
 
-function calculateTotalStudents (array) {
-    if (array === undefined) {return false;}
-    let total = 0;
-    array.forEach((element, index) => {
-        total += element.students;
-    });
-    return total;
-}
+// function calculateTotalStudents2 (array) {
+//     if (array === undefined) {return false;}
+//     let total = 0;
+//     for(let i = 0; i < array.length; i++) {
+//         total += array[i].students
+//     }
+//     return total;
+// }
 
-function calculateTotalStudents2 (array) {
-    if (array === undefined) {return false;}
-    let total = 0;
-    for(let i = 0; i < array.length; i++) {
-        total += array[i].students
-    }
-    return total;
-}
+// let productOf = [20, 18, 19, 44, 2, 777];
 
-let productOf = [20, 18, 19, 44, 2, 777];
-
-console.log(`the product answer should be ${(20 * 18 * 19 * 44 * 2 * 777)}`);
+// console.log(`the product answer should be ${(20 * 18 * 19 * 44 * 2 * 777)}`);
 
 // function multiplyAll (array) {
 //     if (array === undefined) {return false;}
@@ -130,69 +130,69 @@ console.log(`the product answer should be ${(20 * 18 * 19 * 44 * 2 * 777)}`);
 // and a number that is the number of students,
 // and returns an object with the properties `class` and `students`
 //
-convertToObject("Intro to Programming", 20)
+// convertToObject("Intro to Programming", 20)
 
-function convertToObject(string, number){
-    return {class: string, number: number};
-}
+// function convertToObject(string, number){
+//     return {class: string, number: number};
+// }
 
 
-var neighborhood1 ={
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 6},
-        {name: "HS3", rating: 8}
-    ]
-}
+// var neighborhood1 ={
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 6},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
 
-var neighborhood2 ={
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 8},
-        {name: "HS3", rating: 8}
-    ]
-}
+// var neighborhood2 ={
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 8},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
 
-var neighborhood3 ={
-    neighborhood: "Ginormous Ego Estates",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 9},
-        {name: "MS2", rating: 9},
-        {name: "HS3", rating: 9}
-    ]
-}
+// var neighborhood3 ={
+//     neighborhood: "Ginormous Ego Estates",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 9},
+//         {name: "MS2", rating: 9},
+//         {name: "HS3", rating: 9}
+//     ]
+// }
 
 // Write a function that takes a neighborhood object and determines if it is desirable.
 // A neighborhood is desirable if the median home price is less than 300000, crime rates are low,
 // and the total rating of schools is at least 24.
 
-function desirableObject (object) {
-
-    let total = 0;
-
-    for (let i = 0; i < object.schools.length; i++) {
-        total += object.schools[i].rating;
-    }
-    if (object.medianHomePrice < 300000 && object.crimeRate === "low" && total >= 24) {
-        return `${object.neighborhood} is desirable!`;
-    } else {
-        return `${object.neighborhood} is not desirable...`
-    }
-}
+// function desirableObject (object) {
+//
+//     let total = 0;
+//
+//     for (let i = 0; i < object.schools.length; i++) {
+//         total += object.schools[i].rating;
+//     }
+//     if (object.medianHomePrice < 300000 && object.crimeRate === "low" && total >= 24) {
+//         return `${object.neighborhood} is desirable!`;
+//     } else {
+//         return `${object.neighborhood} is not desirable...`
+//     }
+// }
 
 // your company just hired your friend from college and paid you a referral bonus.
 // To celebrate, you're taking your team out to the terrible dive bar next door
@@ -227,14 +227,14 @@ function desirableObject (object) {
 //
 // }
 
-function beeramid (bonus,price){
-    let total = (bonus - (bonus % price))/price;
-    let x = 0;
-    for (let i = 0; total >= ((1 / 3)*(i**3))+((1 / 2)*(i**2))+((1 / 6)*(i)); i++){
-        x = i;
-    }
-    return x;
-}
+// function beeramid (bonus,price){
+//     let total = (bonus - (bonus % price))/price;
+//     let x = 0;
+//     for (let i = 0; total >= ((1 / 3)*(i**3))+((1 / 2)*(i**2))+((1 / 6)*(i)); i++){
+//         x = i;
+//     }
+//     return x;
+// }
 
 // function beeramid (bonus,price){
 //     let total = (bonus - (bonus % price))/price; //this line tells you how many cans of beer you can buy
@@ -273,13 +273,13 @@ function beeramid (bonus,price){
 
 // Regardless of the case of the first name and last name input, the output should be in all lower case.
 
-const attendance = {
-    miami: 32789,
-    buffalo: 45678,
-    portland: 24567
-    // total attendance should be 103034
-    // Avg attendance should be 34344.66
-}
+// const attendance = {
+//     miami: 32789,
+//     buffalo: 45678,
+//     portland: 24567
+//     // total attendance should be 103034
+//     // Avg attendance should be 34344.66
+// }
 
 
 
@@ -296,13 +296,13 @@ const attendance = {
 //     console.log(`${acc} is the total`)
 // }
 
-function totalAttendance (attendanceObj){
-    let total =0;
-    for (const prop in attendanceObj) {
-        total += attendanceObj[prop];
-    }
-    return total;
-}
+// function totalAttendance (attendanceObj){
+//     let total =0;
+//     for (const prop in attendanceObj) {
+//         total += attendanceObj[prop];
+//     }
+//     return total;
+// }
 
 // write a function that returns the average attendance
 
@@ -336,8 +336,8 @@ function totalAttendance (attendanceObj){
  * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
  **/
 
-let address = "8646 Sunny Oaks"
-let address2 = "5408 Villa Nueva"
+// let address = "8646 Sunny Oaks"
+// let address2 = "5408 Villa Nueva"
 
 // ##### Example 1
 //     function convertAddressToObject (address) {
@@ -373,11 +373,11 @@ let address2 = "5408 Villa Nueva"
  *    ]) ➞ 11
  */
 
-    let totalPetsVar = [
-        {name: 'Fernando Mendoza', pets: 1},
-        {name: 'Douglas Hirsh', pets: 8},
-        {name: 'Kenneth Howell', pets: 2}
-    ]
+    // let totalPetsVar = [
+    //     {name: 'Fernando Mendoza', pets: 1},
+    //     {name: 'Douglas Hirsh', pets: 8},
+    //     {name: 'Kenneth Howell', pets: 2}
+    // ]
 
 // ###### For Loop
 //     function countTotalPets (obj) {
@@ -418,7 +418,7 @@ let address2 = "5408 Villa Nueva"
  * All test arrays will have at least one element and are valid.
  */
 
-let warmupArray = [8, 2, 3, 4, 1, 8, 19, 20];
+// let warmupArray = [8, 2, 3, 4, 1, 8, 19, 20];
 
 
 // function minMax (arrayOfNumbers) {
@@ -478,28 +478,28 @@ let warmupArray = [8, 2, 3, 4, 1, 8, 19, 20];
 // * argument and return the drinks objects sorted by price in ascending order.
 // *
 // * Assume that the following array of drink objects needs to be sorted:
-     drinks = [
-         {name: "lemonade", price: 50},
-         {name: "lime", price: 10},
-         {name: "juice", price: 3},
-         {name: "soda", price: 15},
-         {name: "sparkling water", price: 8},
-         {name: "water", price: 1},
-
- ];
+//      drinks = [
+//          {name: "lemonade", price: 50},
+//          {name: "lime", price: 10},
+//          {name: "juice", price: 3},
+//          {name: "soda", price: 15},
+//          {name: "sparkling water", price: 8},
+//          {name: "water", price: 1},
+//
+//  ];
 // console.log(...drinks);
 // Examples
 // sortDrinkByPrice(drinks) ➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}];
 
-function sortDrinkByPrice (drinks) {
-    let acc = 0;
-    for (let i = 0; i < drinks.length; i++) {
-        // console.log(`i is ${i}`);
-        let priceTag = drinks[i].price;
-
-        console.log(`drinks price? ${priceTag}`)
-    }
-}
+// function sortDrinkByPrice (drinks) {
+//     let acc = 0;
+//     for (let i = 0; i < drinks.length; i++) {
+//         // console.log(`i is ${i}`);
+//         let priceTag = drinks[i].price;
+//
+//         console.log(`drinks price? ${priceTag}`)
+//     }
+// }
 
 // ################################### Simple for-loop practice ############################
 
@@ -529,3 +529,37 @@ function sortDrinkByPrice (drinks) {
 //     newArr = [minVal, maxVal];
 //     console.log(newArr);
 // }
+
+//// 3. Write a function printEven() prints all the even numbers of an array using for loops.
+
+// let arrayEven = [13,23,12,45,22,48,66,100]
+
+// function printEven(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] %2 === 0){
+//             console.log(array[i]);
+//         }
+//     }
+// }
+
+// 2. Write a function printArray() prints all elements of 2D array using nested for loops
+
+// let printArrayVar = [
+//     [1, 2],
+//     [3, 4],
+//     [5, 6]
+//     ];
+//
+// function printArray(array){
+//     // first for loop cycles through each element
+//     for (let i = 0; i < array.length; i++) {
+//         // second for loop cycles through each index
+//         for (let j = 0; j < array[i].length; j++){
+//             console.log(array[i][j]);
+//         }
+//     }
+// }
+
+
+
+
