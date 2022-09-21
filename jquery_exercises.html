@@ -3,15 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>jQUERY exercises</title>
+
 </head>
 <body>
-
+    <h1 id="mainHeader" class="codeup">This is Content!</h1>
+    <p class="standardFormat codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa fuga illo nostrum ratione reprehenderit temporibus. Accusamus autem cumque cupiditate dicta dignissimos doloribus, enim ex explicabo iusto soluta, temporibus veritatis.</p>
+    <ul class="standardFormat codeup" id="threeGoals">
+        <li>Complete Codeup</li>
+        <li>Get the job</li>
+        <li>Move on</li>
+    </ul>
+    <p id="codeup">I know this paragraph will not have a 1px solid red border because the class "codeup" isn't the same as the id "codeup".</p>
 <!--  <script src="js/jquery_exercises.js"></script>-->
   <script src="js/jquery-3.6.1.min.js"></script>
   <script>
-      $(document).ready(function (){
-          alert('Page has been loaded!');
-      })
+      // $(document).ready(function (){
+      //     alert('Page has been loaded!');
+      // })
+
+      $(function (){
+          // // jQuery variable to store standardFormat class
+          // const $standardFormatClass = $(".standardFormat");
+          // // editing standardFormat style through jQuery css method
+          // $standardFormatClass.css({
+          //       "background-color" : "lightgray",
+          //       // "border" : "3px solid black",
+          //       // "border-radius": "10px",
+          //       "padding": "15px"
+          //   });
+          //
+          //   // jQuery variable to store mainHeader id
+          //   const $mainHeaderID = $("#mainHeader");
+          //   // editing mainHeader style through jQuery css method
+          //   $mainHeaderID.css({
+          //       "display":"flex",
+          //       "justify-content": "center"
+          //   });
+          //
+          //   // jQuery variable to store the threeGoals id
+            const $threeGoalsID = $("#threeGoals");
+            alert(`The three goals: ${$threeGoalsID.text()}`);
+          //
+          //   // jQuery variable to store the codeup class
+          //   const $codeupClass = $(".codeup");
+          //
+          //   // changing class attributes to satisfy exercise requirements
+          //   $codeupClass.css({
+          //       "border": "1px solid red"
+          //   });
+
+          // Remove your custom jQuery code from previous exercises.
+
+          // Using jQuery, set the font-size of all li elements to 20px.
+
+          // Craft selectors that highlight all the h1, p, and li elements.
+
+          // Create a jQuery statement to alert the contents of your h1 element(s).
+
+
+
+          const $p = $('p'), $li = $('li'), $h1 = $('h1');
+
+          $li.css({
+              "font-size": "20px"
+          })
+
+          let highlightPLiH1 = $($p, $li, $h1).css({
+              'background-color' : 'lightblue'
+          });
+
+          alert(`${$h1.text()}`);
+
+
+
+
+      });
+
   </script>
 </body>
 </html>
