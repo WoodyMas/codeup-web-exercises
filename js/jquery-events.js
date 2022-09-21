@@ -29,6 +29,9 @@ $(function(){
         });
     });
 
+    console.log($('div').text());
+    console.log($('div').html());
+
 
 
 
@@ -54,9 +57,9 @@ $(function(){
     //     // });
     // });
 
-    $(document).keydown(function (e){
-        alert(`you just pressed the ${e.originalEvent.key} key.`);
-
-    })
+    // $(document).keydown(function (e){
+    //     alert(`you just pressed the ${e.originalEvent.key} key.`);
+    //
+    // })
 
 });

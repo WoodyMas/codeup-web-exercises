@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>jQUERY exercises</title>
+    <title>jQUERY Exercises</title>
 
 </head>
 <body>
@@ -13,15 +13,22 @@
         <li>Get the job</li>
         <li>Move on</li>
     </ul>
-    <p id="codeup">I know this paragraph will not have a 1px solid red border because the class "codeup" isn't the same as the id "codeup".</p>
+<!--    <p id="codeup">I know this paragraph will not have a 1px solid red border because the class "codeup" isn't the same as the id "codeup".</p>-->
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad assumenda cum dolor eligendi eos et, facere id illum maxime officiis optio quae quis ratione, rerum similique vel velit voluptates!</span><span>Assumenda cum cupiditate deserunt distinctio ea, eius eos, exercitationem facilis fuga fugiat illo impedit incidunt magnam nisi provident quaerat quisquam sit totam ullam unde! Distinctio dolor praesentium quae sunt ullam?</span></p>
+
+
+
 <!--  <script src="js/jquery_exercises.js"></script>-->
   <script src="js/jquery-3.6.1.min.js"></script>
   <script>
-      // $(document).ready(function (){
-      //     alert('Page has been loaded!');
-      // })
 
-      $(function (){
+
+  $(function (){ // Start Root IIFE
+    // ################################# jQuery Introduction/ Selectors exercises ########################################
+
+          // $(document).ready(function (){
+          //     alert('Page has been loaded!');
+          // })
           // // jQuery variable to store standardFormat class
           // const $standardFormatClass = $(".standardFormat");
           // // editing standardFormat style through jQuery css method
@@ -41,8 +48,9 @@
           //   });
           //
           //   // jQuery variable to store the threeGoals id
-            const $threeGoalsID = $("#threeGoals");
-            alert(`The three goals: ${$threeGoalsID.text()}`);
+          //   const $threeGoalsID = $("#threeGoals");
+          //   alert(`The three goals: ${$threeGoalsID.text()}`);
+
           //
           //   // jQuery variable to store the codeup class
           //   const $codeupClass = $(".codeup");
@@ -61,26 +69,48 @@
           // Create a jQuery statement to alert the contents of your h1 element(s).
 
 
-          const $p = $('p'), $li = $('li'), $h1 = $('h1');
+          // const $p = $('p'), $li = $('li'), $h1 = $('h1');
+          // $li.css({
+          //     "font-size": "20px"
+          // });
+          // let highlightPLiH1 = $($p, $li, $h1).css({
+          //     'background-color' : 'lightblue'
+          // });
+          // alert(`${$h1.text()}`);
 
-          $li.css({
-              "font-size": "20px"
-          })
+  // ######################################## jQuery-events Exercise ##################################################
 
-          let highlightPLiH1 = $($p, $li, $h1).css({
-              
-              'background-color' : 'lightblue'
+      $(function (){ // Start IIFE 2
 
+      // Set all li text color to red when the mouse is hovering; reset to black when it is not.
+
+          $('#mainHeader').on('click', function (){
+              $('#mainHeader').css({
+                  'background-color': 'green'
+
+              });
           });
 
+          // const $p = 'p';
+          // Working version below to a specific double-clicked <p> red
+          $('p').dblclick(function (){
+             $(this).css('font-size', '18px');
+          });
+
+          $('li').hover(function (){
+              $(this).css({
+                  'color': 'red'
+              });
+          }, function (){
+              $(this).css({
+                  'color': 'revert'
+              });
+          });
+
+      }); // End IIFE 2
 
 
-          alert(`${$h1.text()}`);
-
-
-
-
-      });
+  }); // End Root IIFE
 
   </script>
 </body>
