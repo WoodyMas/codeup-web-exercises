@@ -3,76 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
-    <style>
-        .hidden {
-            visibility: hidden;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/jquery_faq.css">
 </head>
 <body>
     <h1 id="main-header">10 "Frequently" Asked Questions About National Parks!</h1>
     <dl>
             <dt>Is Yellowstone National Park bigger than Rhode Island and Delaware Combined?</dt>
             <dd class="invisible">Well yes. Though neither of these states can boast their size. If a national park wants to brag, it should measure itself against Texas or Alaska... then i'll be impressed.</dd>
+            <ul class="listFacts">
+                <li><h3>YellowStone</h3></li>
+                <li>Fact 1: It's not entirely yellow</li>
+                <li>Fact 2: It's not entirely stone</li>
+                <li>Fact 3: It's not named after the TV show.</li>
+            </ul>
 
             <dt>Is it possible to enter the park after entrance stations close?</dt>
             <dd  class="invisible">If you arrive after hours and entrance stations or visitor centers are closed, you may proceed into the park. Please pay your entry fee at a convenient time at an entrance station.</dd>
+            <ul>
+                <li><h3>YellowStone</h3></li>
+                <li>There are lots</li>
+                <li>Of Parking Spots</li>
+                <li>On the Dots</li>
+            </ul>
 
             <dt>When will I be able to have an off day to visit Big Bend National Park</dt>
             <dd class="invisible">It depends on your circumstance. This is a FAQ board for parks, not a travel site.</dd>
+            <ul>
+                <li><h3>YellowStone</h3></li>
+                <li>There are lots</li>
+                <li>Of Parking Spots</li>
+                <li>On the Dots</li>
+            </ul>
 
             <dt>How many trees are in Bryce Canyon National Park?</dt>
             <dd class="invisible">Well the picture makes it look like 0, but the official answer is "Idk."</dd>
+            <ul>
+                <li><h3>YellowStone</h3></li>
+                <li>There are lots</li>
+                <li>Of Parking Spots</li>
+                <li>On the Dots</li>
+            </ul>
 
             <dt>Does Glacier National Park have a glacier?</dt>
             <dd class="invisible">I'm pretty sure the name is derived from the fact that the glacier formed the park, not that there's a glacier... JUST KIDDING! it has almost two dozen active glaciers.</dd>
+        <ul>
+            <li><h3>YellowStone</h3></li>
+            <li>There are lots</li>
+            <li>Of Parking Spots</li>
+            <li>On the Dots</li>
+        </ul>
 
             <dt>How many acres are in Denali National Park?</dt>
             <dd class="invisible">Google says 6 million.</dd>
+        <ul>
+            <li><h3>YellowStone</h3></li>
+            <li>There are lots</li>
+            <li>Of Parking Spots</li>
+            <li>On the Dots</li>
+        </ul>
 
             <dt>Why is it called Death Valley National Park?</dt>
             <dd class="invisible">Death Valley was given its forbidding name by a group of pioneers lost here in the winter of 1849-1850.</dd>
-
+        <ul>
+            <li><h3>YellowStone</h3></li>
+            <li>There are lots</li>
+            <li>Of Parking Spots</li>
+            <li>On the Dots</li>
+        </ul>
             <dt>Why is this question about Death Valley National Park again?</dt>
             <dd class="invisible">Because I'm getting tired of adding dts and dds.</dd>
-
+        <ul>
+            <li><h3>YellowStone</h3></li>
+            <li>There are lots</li>
+            <li>Of Parking Spots</li>
+            <li>On the Dots</li>
+        </ul>
             <dt>What makes a National Park?</dt>
             <dd class="invisible">In an Act of August 18, 1970, the National Park System was defined in law as any area of land or water now and hereafter administered by the Secretary of the Interior through the National Park Service for park, monument, historic, parkway, recreational, or other purposes.</dd>
+        <ul>
+            <li><h3>YellowStone</h3></li>
+            <li>There are lots</li>
+            <li>Of Parking Spots</li>
+            <li>On the Dots</li>
+        </ul>
 
             <dt>What other National Park is in Texas other than Big Bend?</dt>
             <dd class="invisible">Guadalupe Mountains National Park.</dd>
-
+        <ul>
+            <li><h3>YellowStone</h3></li>
+            <li>There are lots</li>
+            <li>Of Parking Spots</li>
+            <li>On the Dots</li>
+        </ul>
     </dl>
     <button id="showHide">Show/Hide Answers</button>
 
+<!-- Scripts  -->
     <script src="js/jquery-3.6.1.min.js"></script>
-    <script>
-
-        //     Create some CSS rules that sets elements with the invisible class to visibility: hidden;.
-
-
-
-        // Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
-        $('#showHide').click(function (){
-            $('.invisible').toggleClass('hidden');
-
-        });
-
-        //     Bonus
-
-
-        // When any of the dt elements is clicked, the element that was clicked should be highlighted.
-        $('dt').click(function (){
-            $(this).css({
-                'background-color': 'yellow'
-            })
-        });
-
-
-
-
-
-    </script>
+    <script src="js/jquery_faq.js"></script>
+<!-- /Scripts  -->
 </body>
 </html>
