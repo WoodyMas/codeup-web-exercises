@@ -7,9 +7,9 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <style>
-        #yikes {
-            text-decoration-line: line-through;
-        }
+        /*#yikes {*/
+        /*    !*text-decoration-line: line-through;*!*/
+        /*}*/
 
         #yes {
             font-weight: bold;
@@ -35,6 +35,59 @@
             margin: 0 30px 0 30px;
         }
 
+        #my-tool-stor-h1 {
+            margin: 0;
+            /*font-family: helvetica-neue-black-condensed,Helvetica Neue,Helvetica,Arial,sans-serif;*/
+
+        }
+        #slogan {
+            /*font-family: Helvetica-nue-black-condensed, "Helvetica Neue", Helvetica, Arial, sans-serif ;*/
+            font-size: 1.3em;
+            font-family: Palatino;
+            padding: 5px 0;
+
+        }
+        .cross {
+            position: relative;
+            display: inline-block;
+        }
+            .cross::before, .cross::after {
+                content: '';
+                width: 100%;
+                position: absolute;
+                right: 0;
+                top: 50%;
+            }
+            .cross::before {
+                border-bottom: 3px solid white;
+                -webkit-transform: skewY(-10deg);
+                transform: skewY(-10deg);
+            }
+            .cross::after {
+                border-bottom: 3px solid white;
+                -webkit-transform: skewY(10deg);
+                transform: skewY(10deg);
+            }
+
+    #buy-now-button {
+        background-color: #3C94D9;
+        border-radius: 10px;
+        color: antiquewhite;
+        text-shadow: black 1px 1px 1px,
+        black 2px 0px 3px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stretch-div {
+        width: 95%;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+        /*display: flex;*/
+        /*flex-grow: 1;*/
+    }
 
 
 
@@ -46,21 +99,28 @@
 <!--<h1>My Tool Store</h1>-->
 
 <div class="container-fluid my-4 bg-light rounded-3 py-4 px-0 d-flex-column align-content-center" id="main-heading" style="background-image: url('img/tool-store-jumbotron-bg.jpg'); height: 346px" >
-    <h1 class="display-2 text-center bg-light bg-opacity-75 my-8">My Tool St&#246;r</h1>
+    <h1 id="my-tool-stor-h1" class="display-2 text-center bg-light bg-opacity-75">My Tool St&#246;r</h1>
+    <p id="slogan" class="text-center bg-light bg-opacity-75">For outrageously overpriced items, you've come to the <span id="yikes" class="cross">right</span> <span id="yes"> WRONG</span> place!</p>
 </div>
 
-<div id="products-div">
-    <table id="products" class="border">
-        <thead>
-            <tr>
-                <th class="border">Title</th>
-                <th class="border">Quantity</th>
-                <th class="border">Price</th>
-                <th class="border">Categories</th>
-            </tr>
-        </thead>
-        <tbody id="insertProducts"></tbody>
-    </table>
+<div class="container">
+    <div id="products-div">
+        <table id="products" class="border">
+            <thead>
+                <tr>
+                    <th class="border">Title</th>
+                    <th class="border">Quantity</th>
+                    <th class="border">Price</th>
+                    <th class="border">Categories</th>
+                </tr>
+            </thead>
+            <tbody id="insertProducts"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="stretch-div">
+    <button id="buy-now-button">SECURE A TOOL TODAY, YOU FOOL!</button>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
