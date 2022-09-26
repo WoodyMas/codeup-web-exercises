@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <script src="js/keys.js"></script>
+    <!-- mapbox api javascript -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- mapbox api css -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+<!--    <script src="js/mapbox.js"></script>-->
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/weather_map.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather_map.css">
+
+</head>
+<body>
+<main>
+    <div class="stretchDiv container row mx-auto">
+
+    </div>
+</main>
+
+
+
+<main> <!-- Weather App Nav, City and City Finder Section -->
+
+<!-- Basic Bootstrap Navbar Template -->
+
+    <nav class="navbar bg-light"> <!-- Navbar element -->
+        <div class="container-fluid">
+            <a class="navbar-brand">Ur Weather App</a>
+            <a class="navbar-brand">Current City:</a>
+            <!--<form class="d-flex" role="search">-->
+            <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+            <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+            <!--</form>-->
+        </div> <!-- /Navbar element -->
+    </nav>
+
+    <!-- Find City Search Bar -->
+    <div id="find-city-wrapper">
+        <label for="find-city-input">City</label>
+        <input type="text" id="find-city-input" alt="Search for a city.">
+        <button id="find-city-button">Find</button>
+    </div>
+
+    <!-- Forecast Cards -->
+    <div id="forecast-cards-container" class="container-fluid row justify-content-center">
+
+<!--        <div class="card col-2 forecast-card">TEST</div>-->
+<!--        <div class="card col-2 forecast-card">TEST</div>-->
+<!--        <div class="card col-2 forecast-card">TEST</div>-->
+<!--        <div class="card col-2 forecast-card">TEST</div>-->
+<!--        <div class="card col-2 forecast-card">TEST</div>-->
+    </div>
+
+</main> <!-- /Weather App Nav, City and City Finder Section -->
+
+<hr class="stretchDiv"> <!-- Separate info and Map display -->
+
+<section> <!-- Graphic Display Section for Map -->
+    <div class="stretchDiv container row mx-auto"> <!-- Div wrapper for Map -->
+        <div id='map' class="mx-auto-4"></div> <!-- Mapbox -->
+    </div> <!-- /Div wrapper for Map -->
+</section> <!-- /Graphic Display Section for Map -->
+
+<!--<section> &lt;!&ndash; Mapbox Functionality Section &ndash;&gt;-->
+<!--    <div id="map-functions" class="stretchDiv container row">-->
+<!--        <div> &lt;!&ndash; Map functions div wrapper &ndash;&gt;-->
+<!--            <input type="text" id="search-city-input">-->
+<!--            <label for="search-city"></label>-->
+<!--            <button id="search-city">Search City Forecast!</button>-->
+
+<!--        </div> &lt;!&ndash; /Map functions div wrapper &ndash;&gt;-->
+<!--    </div>-->
+<!--</section> &lt;!&ndash; /Mapbox Functionality Section &ndash;&gt;-->
+
+
+
+
+
+
+</body>
+</html>

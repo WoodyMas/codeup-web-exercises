@@ -1,13 +1,6 @@
 // -- Write a function that takes in an input, checks that input, and returns true or false depending on some feature of
 // the input (what kind of number, what kind of string, what type of data it is)
 
-function checkInput (input){
-    let stringCheck = typeof input === 'string';
-    let numCheck = typeof input === 'number';
-
-
-
-}
 
 // -- Write a function that takes in an input, does something to it, and returns the modified data (do a mathematical
 // operation on it, do a string method to modify it, use an array method to modify an array)
@@ -115,10 +108,6 @@ function checkInput (input){
 // 2. pass in parameters
 // 3. 3 scores ( variables)
 // 4. return something (number)
-
-let first = 120;
-let second = 234;
-let third = 90;
 
 // Modify the function to accept an array of bowling scores and return the average
 

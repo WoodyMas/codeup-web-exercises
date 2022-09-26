@@ -1,0 +1,16 @@
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+#find-city-wrapper {
+    margin: 20px 0;
+}
+
+.stretchDiv {
+    width: 100%;
+}
+
+#map-functions {
+    margin: 10px;
+}
