@@ -574,4 +574,89 @@
 
 
 
+// -- Write a function that takes in an input, checks that input, and returns true or false depending on some feature of the input (what kind of number, what kind of string, what type of data it is)
+//
+
+
+
+//1)I want to put value into input
+//2)I want to check for the type of feature is is in feature
+/*3)I want to display the stats of that input, aka.
+
+inputFeature(15, "number")
+
+ 15 is a number:
+ number: true
+ string: false
+ array: false
+ boolean: false
+ negative: false
+
+ inputFeature(true, "string")
+ True is a boolean:
+ number: false
+ array: false
+ boolean: false
+ negative: false
+ string: false
+
+ and so forth
+
+
+* */
+
+
+
+
+
+//
+function inputFeatures(input, feature){
+    let typeCheck = typeof input // this will show us input's type
+
+    //inputFeatures(12, 'string');
+    // 12 is input. typeCheck === 'number'... why?
+    // if (typeCheck === feature)
+
+
+    if(typeCheck === feature){
+        return true;
+        // return `${input} is a ${typeCheck}`;
+    } else if (typeCheck !== feature && (typeof parseFloat(input) === 'number' && (feature === 'number'))){
+        return `${input} is an alpha-numeric string!`;
+    } else {
+        return false;
+    }
+}
+
+console.log(inputFeatures(15, "boolean"));
+
+// -- Write a function that takes in an input, checks that input, and returns true or false depending on some feature of the input (what kind of number, what kind of string, what type of data it is)
+
+// function inputFeatures(input){
+//     // needs to take input & check it
+//     // must return true or false depending on some feature
+// }
+
+function inputFeatures2(input){
+    let checkObj = [
+        {
+            numberCheck: ``,
+            stringCheck: ``,
+            arrayCheck: ``,
+            booleanCheck: ``,
+            posNegCheck: ``,
+            objectCheck: ``
+        }
+    ]; // end of checkObj variable
+
+
+
+}
+
+// 15 is a number:
+//     number: true
+// string: false
+// array: false
+// boolean: false
+// negative: false
 

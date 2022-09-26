@@ -64,23 +64,23 @@
         map.setZoom(document.getElementById('zoom').value);
     });
 
-    const codeupMarker = new mapboxgl.Marker()
-        .setLngLat([-98.48962, 29.42692])
-        .addTo(map);
-    const codeupPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">Codeup</p>');
-    codeupMarker.setPopup(codeupPopup);
-
-    const walditoMarker = new mapboxgl.Marker()
-        .setLngLat([-98.596844, 29.487531])
-        .addTo(map);
-    const walditoPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">El Ceviche Del Waldito</p>');
-    walditoMarker.setPopup(walditoPopup);
-
-    const nandoMarker = new mapboxgl.Marker()
-        .setLngLat([-98.522882, 29.387121])
-        .addTo(map);
-    const nandoPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">El Ceviche Del Waldito</p>');
-    nandoMarker.setPopup(nandoPopup);
+    // const codeupMarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.48962, 29.42692])
+    //     .addTo(map);
+    //     // const codeupPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">Codeup</p>');
+    //     // codeupMarker.setPopup(codeupPopup);
+    //
+    // const walditoMarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.596844, 29.487531])
+    //     .addTo(map);
+    //     // const walditoPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">El Ceviche Del Waldito</p>');
+    //     // walditoMarker.setPopup(walditoPopup);
+    //
+    // const nandoMarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.522882, 29.387121])
+    //     .addTo(map);
+        // const nandoPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">Taco Nando</p>');
+        // nandoMarker.setPopup(nandoPopup);
 
     // let coords;
     function getCoords(address, token){
@@ -100,6 +100,33 @@
             const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
             map.setCenter(coordinates);
         });
+    });
+    //
+    // const restaurantInfo = [
+    //     { codeup: 'Codeup is one of my favorite restaurants. I eat there all the time.', lngLat: [-98.48962, 29.42692]},
+    //     { waldito: 'El Ceviche de Waldito is a great restaurant with a great chef. He and I go way back.', lngLat: [-98.596844, 29.487531]},
+    //     { nando: `Taco Nando is a great restaurant. The owner's son and I go way back.`, lngLat: [-98.522882, 29.387121]}
+    // ];
+
+    const betterRestaurantInfo = [
+        {name: 'Codeup', bio: 'Codeup is one of my favorite restaurants. I eat there all the time.', lngLat: [-98.48962, 29.42692], image: '<img src="img/codeup_restaurant.jpeg">'},
+        {name: 'Waldito', bio: 'El Ceviche de Waldito is a great restaurant with a great chef. He and I go way back.', lngLat: [-98.596844, 29.487531], image: '<img src="img/waldo.jpeg">'},
+        {name: 'Taco Nando', bio: `Taco Nando is a great restaurant. The owner's son and I go way back.`, lngLat: [-98.522882, 29.387121], image: '<img src="img/taco-nando.jpeg">'},
+    ];
+
+    betterRestaurantInfo.forEach((element, index) =>{
+// const codeupPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">Codeup</p>');
+// codeupMarker.setPopup(codeupPopup);
+        let allMarker = new mapboxgl.Marker().setLngLat(betterRestaurantInfo[index].lngLat).addTo(map);
+        let allPopInfo = new mapboxgl.Popup().setHTML(`<div class="card mt-3 d-flex row" style="overflow-y: scroll;"><div class="icon-wrapper justify-content-center col-12">${betterRestaurantInfo[index].image}</div> <p class="mt-3 col-12" style="width: 200px;">${betterRestaurantInfo[index].bio}</p></div>`);
+        allMarker.setPopup(allPopInfo);
+
+
+// let allPop = new mapboxgl.Popup().setHTML(`<p class="mt-3" style="width: 230px;">${betterRestaurantInfo[index].bio}</p>`);
+
+
+        console.log(betterRestaurantInfo[index].lngLat);
+        console.log(betterRestaurantInfo[index].name);
     });
 
 
