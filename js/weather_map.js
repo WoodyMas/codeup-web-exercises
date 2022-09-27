@@ -80,20 +80,28 @@ $(function (){
             // }
             if (dailyIndexRate) {
                 // console.log(data.list[index]);
-                $('#forecast-cards-container').append(`<div class="card col-2 forecast-card">
-                    <p>Date: ${data.list[index].dt_txt}</p>
-                    <p>Temperature: ${data.list[index].main.temp}</p>
-                    <p>Description: ${data.list[index].weather[0].description}</p>
-                    <p>Humidity: ${data.list[index].main.humidity}</p>
-                    <p>Wind Speed: ${data.list[index].wind.speed}</p>
-                    <p>Pressure: ${data.list[index].main.pressure}</p>
-                    </div>`)
+                updateMapWithUserInput();
+                printWeatherCards();
             }
 
         });
 
     });
-
+    function printWeatherCards() {
+        $('#forecast-cards-container').append(`<div class="card col-2 forecast-card">
+                    <p>Date: ${data.list[index].dt_txt}</p>
+                    <hr class="stretchDiv">
+                    <p>Temperature: ${data.list[index].main.temp}</p>
+                    <hr class="stretchDiv">
+                    <p>Description: ${data.list[index].weather[0].description}</p>
+                    <hr class="stretchDiv">
+                    <p>Humidity: ${data.list[index].main.humidity}</p>
+                    <hr class="stretchDiv">
+                    <p>Wind Speed: ${data.list[index].wind.speed}</p>
+                    <hr class="stretchDiv">
+                    <p>Pressure: ${data.list[index].main.pressure}</p>
+                    </div>`);
+    }
 
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
@@ -172,27 +180,17 @@ $(function (){
 
 
 
-    document.getElementById('find-city-button').addEventListener('click', function (e){
-        e.preventDefault();
-        const address = document.getElementById('find-city-input').value;
-        console.log(address);
-        geocode(address, MAPBOX_API_TOKEN).then(function (coordinates){
-            console.log(coordinates);
-            const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
-            map.setCenter(coordinates);
-            console.log(coordinates);
-
-
-
-
-
-            // userMarker.forEach((element, index) =>{
-            //     let allPopInfo = new mapboxgl.Popup().setHTML();
-            //     userMarker.setPopup(allPopInfo);
-            // });
-
-        });
-    });
+    // document.getElementById('find-city-button').addEventListener('click', function (e){
+    //     e.preventDefault();
+    //     const address = document.getElementById('find-city-input').value;
+    //     console.log(address);
+    //     geocode(address, MAPBOX_API_TOKEN).then(function (coordinates){
+    //         console.log(coordinates);
+    //         const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+    //         map.setCenter(coordinates);
+    //         console.log(coordinates);
+    //     });
+    // });
 
 
 
@@ -214,6 +212,21 @@ $(function (){
 //     });
 
     // $('.forecast-card').append(`<p>Temperature data: ${data} </p>`).;
+
+    function updateMapWithUserInput () {
+        document.getElementById('find-city-button').addEventListener('click', function (e) {
+            e.preventDefault();
+            const address = document.getElementById('find-city-input').value;
+            console.log(address);
+            geocode(address, MAPBOX_API_TOKEN).then(function (coordinates) {
+                console.log(coordinates);
+                const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+                map.setCenter(coordinates);
+                console.log(coordinates);
+            });
+        });
+    }
+
 
 });
 

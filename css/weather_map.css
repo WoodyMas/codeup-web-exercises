@@ -9,8 +9,14 @@
 
 .stretchDiv {
     width: 100%;
+    margin: 2% 0;
 }
 
 #map-functions {
     margin: 10px;
+}
+
+/*Affects all the p tags under forecast-card class*/
+.forecast-card>p {
+    margin: .5rem 0;
 }
