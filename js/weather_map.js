@@ -53,28 +53,44 @@ $(function (){
 
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
-        lat:    29.423017,
-        lon:   -98.48527,
+        // San Antonio
+        lat: 29.423017,
+        lon: -98.48527,
+
+        // Houston
+        // lat: 29.77159537828818,
+        // lon: -95.42468488722787,
+
+        // Pyeongtaek
+        // lat: 37.00023056197412,
+        // lon: 126.96437808817802,
+
+        // p: 'Houston',
         units: "imperial"
     }).done(function(data) {
         // console.log(data);
         // console.log(data.list[0].weather);
         // console.log(data.list.weather.description)
         data.list.forEach((forecast, index) => {
-            console.log(data.list[index].weather);
+
             let dailyIndexRate = index % 8 === 0;
+
             // if (index % 8 === 0) {
             //     console.log(forecast.dt_txt);
             // }
             if (dailyIndexRate) {
+                // console.log(data.list[index]);
                 $('#forecast-cards-container').append(`<div class="card col-2 forecast-card">
                     <p>Date: ${data.list[index].dt_txt}</p>
                     <p>Temperature: ${data.list[index].main.temp}</p>
-                    <p>Description:  ${data.list[index].weather[0].description}</p>
+                    <p>Description: ${data.list[index].weather[0].description}</p>
+                    <p>Humidity: ${data.list[index].main.humidity}</p>
+                    <p>Wind Speed: ${data.list[index].wind.speed}</p>
+                    <p>Pressure: ${data.list[index].main.pressure}</p>
                     </div>`)
             }
 
-        })
+        });
 
     });
 
@@ -146,6 +162,56 @@ $(function (){
         return (`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`)
     }
 
+    function getCoords(address, token){
+        geocode(address, token).then(function (coordinates){
+            console.log(coordinates);
+            // coords = coordinates;
+        });
+    }
+
+
+
+
+    document.getElementById('find-city-button').addEventListener('click', function (e){
+        e.preventDefault();
+        const address = document.getElementById('find-city-input').value;
+        console.log(address);
+        geocode(address, MAPBOX_API_TOKEN).then(function (coordinates){
+            console.log(coordinates);
+            const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+            map.setCenter(coordinates);
+            console.log(coordinates);
+
+
+
+
+
+            // userMarker.forEach((element, index) =>{
+            //     let allPopInfo = new mapboxgl.Popup().setHTML();
+            //     userMarker.setPopup(allPopInfo);
+            // });
+
+        });
+    });
+
+
+
+
+
+//     betterRestaurantInfo.forEach((element, index) =>{
+// // const codeupPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">Codeup</p>');
+// // codeupMarker.setPopup(codeupPopup);
+//         let allMarker = new mapboxgl.Marker().setLngLat(betterRestaurantInfo[index].lngLat).addTo(map);
+//         let allPopInfo = new mapboxgl.Popup().setHTML(`<div class="card mt-3 d-flex row" style="overflow-y: scroll;"><div class="icon-wrapper justify-content-center col-12">${betterRestaurantInfo[index].image}</div> <p class="mt-3 col-12" style="width: 200px;">${betterRestaurantInfo[index].bio}</p></div>`);
+//         allMarker.setPopup(allPopInfo);
+//
+//
+// // let allPop = new mapboxgl.Popup().setHTML(`<p class="mt-3" style="width: 230px;">${betterRestaurantInfo[index].bio}</p>`);
+//
+//
+//         console.log(betterRestaurantInfo[index].lngLat);
+//         console.log(betterRestaurantInfo[index].name);
+//     });
 
     // $('.forecast-card').append(`<p>Temperature data: ${data} </p>`).;
 
