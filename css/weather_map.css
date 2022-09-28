@@ -1,10 +1,28 @@
+body {
+    /*background-color: #36393f;*/
+}
+
 #map {
     height: 300px;
     width: 100%;
 }
+#main-navbar {
+    font-family: Impact;
+}
+
+#find-city-button {
+    border-radius: 5px;
+    color: black;
+}
+
+#find-city-input {
+    border-radius: 5px;
+    border: 2px solid black;
+}
 
 #find-city-wrapper {
     margin: 20px 0;
+    /*border-radius: 20px;*/
 }
 
 .stretchDiv {
@@ -14,6 +32,19 @@
 
 #map-functions {
     margin: 10px;
+}
+
+.forecast-card {
+    margin: 0 .8rem;
+    /*background-color: #36393f;*/
+    border: 2px solid black;
+    border-radius: 0px;
+    color: black;
+}
+
+#forecast-cards-container {
+    margin: auto;
+    /*background-color: #848487;*/
 }
 
 /*Affects all the p tags under forecast-card class*/

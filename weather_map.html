@@ -32,10 +32,18 @@
 
 <!-- Basic Bootstrap Navbar Template -->
 
-    <nav class="navbar bg-light"> <!-- Navbar element -->
+    <nav id="main-navbar" class="navbar bg-primary"> <!-- Navbar element -->
         <div class="container-fluid">
-            <a class="navbar-brand">Ur Weather App</a>
-            <a class="navbar-brand">Current City:</a>
+            <a id="currentCity" class="navbar-brand">Current City: </a>
+            <a class="navbar-brand">Weather App</a>
+
+            <!-- Find City Search Bar -->
+            <div id="find-city-wrapper">
+<!--                <label for="find-city-input">City</label>-->
+                <input type="text" id="find-city-input" placeholder="Search for a city">
+                <button id="find-city-button">Find City</button>
+            </div>
+
             <!--<form class="d-flex" role="search">-->
             <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
             <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
@@ -44,6 +52,12 @@
     </nav>
 
 </header> <!-- /Weather App Nav & City-->
+<hr class="stretchDiv"> <!-- Separate info and Map display -->
+<section> <!-- Graphic Display Section for Map -->
+    <div class="stretchDiv container row mx-auto"> <!-- Div wrapper for Map -->
+        <div id='map' class="mx-auto-4"></div> <!-- Mapbox -->
+    </div> <!-- /Div wrapper for Map -->
+</section> <!-- /Graphic Display Section for Map -->
 
 <main>
 
@@ -51,22 +65,22 @@
     <div id="forecast-cards-container" class="container-fluid row justify-content-center">
 
     </div>
-    <!-- Find City Search Bar -->
-    <div id="find-city-wrapper">
-        <label for="find-city-input">City</label>
-        <input type="text" id="find-city-input" alt="Search for a city.">
-        <button id="find-city-button">Find</button>
-    </div>
+<!--    &lt;!&ndash; Find City Search Bar &ndash;&gt;-->
+<!--    <div id="find-city-wrapper">-->
+<!--        <label for="find-city-input">City</label>-->
+<!--        <input type="text" id="find-city-input" alt="Search for a city.">-->
+<!--        <button id="find-city-button">Find</button>-->
+<!--    </div>-->
 </main>
 
 
 <hr class="stretchDiv"> <!-- Separate info and Map display -->
 
-<section> <!-- Graphic Display Section for Map -->
-    <div class="stretchDiv container row mx-auto"> <!-- Div wrapper for Map -->
-        <div id='map' class="mx-auto-4"></div> <!-- Mapbox -->
-    </div> <!-- /Div wrapper for Map -->
-</section> <!-- /Graphic Display Section for Map -->
+<!--<section> &lt;!&ndash; Graphic Display Section for Map &ndash;&gt;-->
+<!--    <div class="stretchDiv container row mx-auto"> &lt;!&ndash; Div wrapper for Map &ndash;&gt;-->
+<!--        <div id='map' class="mx-auto-4"></div> &lt;!&ndash; Mapbox &ndash;&gt;-->
+<!--    </div> &lt;!&ndash; /Div wrapper for Map &ndash;&gt;-->
+<!--</section> &lt;!&ndash; /Graphic Display Section for Map &ndash;&gt;-->
 
 <!--<section> &lt;!&ndash; Mapbox Functionality Section &ndash;&gt;-->
 <!--    <div id="map-functions" class="stretchDiv container row">-->
