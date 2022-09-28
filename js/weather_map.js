@@ -1,9 +1,6 @@
 $(function (){
     const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-<<<<<<< HEAD
-=======
 
->>>>>>> safety-box
 // #################### Mapbox API #################################################
 // Original Mapbox API
     //mapboxgl.accessToken = MAPBOX_API_TOKEN;
@@ -50,49 +47,6 @@ $(function (){
     marker.on('dragend', onDragEnd);
 
 // ####################### Weather Map API ########################################
-<<<<<<< HEAD
-
-
-
-    // $.get("http://api.openweathermap.org/data/2.5/weather", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat: 29.423017,
-    //     lon: -98.48527,
-    //     units: 'imperial'
-    // }).done(function(data) {
-    //     console.log('current weather:')
-    //     console.log(data);
-    //     console.log(windCardinalDirection(data.wind.deg));
-    // });
-
-    // $.get("https://api.openweathermap.org/data/2.5/weather", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     q:     "San Antonio, US"
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
-
-    // $.get("http://api.openweathermap.org/data/2.5/onecall", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat: 29.423017,
-    //     lon: -98.48527
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
-
-    // $.get("http://api.openweathermap.org/data/2.5/onecall", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat:    29.423017,
-    //     lon:   -98.48527,
-    //     units: "imperial"
-    // }).done(function(data) {
-    //     console.log('The entire response:', data);
-    //     console.log('Diving in - here is current information: ', data.current);
-    //     console.log('A step further - information for tomorrow: ', data.daily[1]);
-    // });
-
-=======
->>>>>>> safety-box
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat:    29.423017,
@@ -100,10 +54,7 @@ $(function (){
         units: "imperial"
     }).done(function(data) {
         $('#currentCity').text(`Current City: ${data.city.name}`);
-<<<<<<< HEAD
-=======
         // map.setCenter([`${data.lon}`, `${data.lat}`]);
->>>>>>> safety-box
         console.log(data);
         // console.log(data.list[0].weather);
         // console.log(data.list.weather.description)
@@ -111,30 +62,6 @@ $(function (){
             console.log(data.list[index]);
             let dailyIndexRate = index % 8 === 0;
             if (dailyIndexRate) {
-<<<<<<< HEAD
-                $('#forecast-cards-container').append(`<div class="card col-lg-2 col-md-4 forecast-card">
-                    <p>Date: ${data.list[index].dt_txt.split(' ')[0]}</p>
-                    <hr class="stretchDiv">
-                    <p>Temperature: ${data.list[index].main.temp}</p>
-                    <hr class="stretchDiv">
-                    <p>Description:  ${data.list[index].weather[0].description}</p>
-                    <hr class="stretchDiv">
-                    <p>Humidity:  ${data.list[index].main.humidity}</p>
-                    <hr class="stretchDiv">
-                    <p>Wind Speed:  ${data.list[index].wind.speed}</p>
-                    <hr class="stretchDiv">
-                    <p>Pressure:  ${data.list[index].main.pressure}</p>
-                    </div>`);
-            }
-
-        })
-
-    });
-
-
-
-
-=======
                 $('#forecast-cards-container').append(`
                     <div class="card col-lg-2 col-md-4 forecast-card">
                         <p class="card-header">Date: ${data.list[index].dt_txt.split(' ')[0]}</p>
@@ -153,7 +80,6 @@ $(function (){
             }
         });
     });
->>>>>>> safety-box
     function formatTime(timeStamp){
         let dateTime = new Date(timeStamp * 1000);
         let year = dateTime.getFullYear();
@@ -165,30 +91,18 @@ $(function (){
         let formattedDateTime = month + " " + day + " " + year + " " + hour + ":" + minutes + ":" + seconds;
         return formattedDateTime;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> safety-box
     function appendLeadingZeroes(n){
         if(n <= 9){
             return "0" + n;
         }
         return n;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> safety-box
     //converting the given unix time in miliseconds into
     //a human-readable format
     function epochDateConversion(milliseconds){
         let date = new Date(milliseconds * 1000)
         return (`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`)
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> safety-box
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
         if ((degrees > 348.75 && degrees <= 360) || (degrees >=0 && degrees <= 11.25)){
@@ -227,15 +141,7 @@ $(function (){
         return cardinalDirection;
     }
 
-<<<<<<< HEAD
-// ####################### Necessary Functions ##################################################
-
-
-
-
-=======
 // ####################### Weather Card Generator Function ##################################################
->>>>>>> safety-box
     // Weather card updater function
     function printWeather(data) {
         $( "#forecast-cards-container" ).empty(); // This will clear the cards before you put a new location
@@ -244,19 +150,6 @@ $(function (){
             if (i % 8 === 0) {
                 $(`#forecast-cards-container`).append(`
                 <div class="card col-lg-2 forecast-card">
-<<<<<<< HEAD
-                <p> Current date: ${data.list[i].dt_txt.split(' ')[0]}</p>
-                <hr class="stretchDiv">
-                <p>Temperature: ${data.list[i].main.temp}</p>
-                <hr class="stretchDiv">
-                <p>Description: ${data.list[i].weather[0].description}</p>
-                <hr class="stretchDiv">
-                <p>Humidity: ${data.list[i].main.humidity}</p>
-                <hr class="stretchDiv">
-                <p>Wind Speed: ${data.list[i].wind.speed}</p> 
-                <hr class="stretchDiv">
-                <p>Pressure: ${data.list[i].main.pressure}</p>
-=======
                     <p class="card-header"> Current date: ${data.list[i].dt_txt.split(' ')[0]}</p>
 <!--                    <hr class="stretchDiv">-->
                     <p>Temperature: ${data.list[i].main.temp}&#8457</p>
@@ -270,26 +163,11 @@ $(function (){
                     <p>Wind Speed: ${data.list[i].wind.speed}</p> 
                     <hr class="stretchDiv">
                     <p>Pressure: ${data.list[i].main.pressure}</p>
->>>>>>> safety-box
                 </div>`);
             }
         });
     }
-    function updateWeather(coordinates) {
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            APPID: OPEN_WEATHER_APPID,
-            lat: coordinates[1],
-            lon: coordinates[0],
-            units: "imperial" // this is fahrenheit
-        }).done(function (data) {
-            console.log("completed updateWeather get request");
-            printWeather(data);
-            $('#currentCity').text(`Current City: ${data.city.name}`);
 
-<<<<<<< HEAD
-        });
-    }
-=======
 //  #################################### Update Weather Info With a New API Call #######################################
 
     function updateWeather(coordinates) {
@@ -308,7 +186,6 @@ $(function (){
 
 //  ########################################## Search Bar Updates Map Function #########################################
 
->>>>>>> safety-box
     // Search Bar
     document.getElementById('find-city-button').addEventListener('click', function (e) {
         e.preventDefault();
@@ -323,13 +200,6 @@ $(function (){
             // const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
 
             map.setCenter(coordinates);
-<<<<<<< HEAD
-            updateWeather(coordinates);
-
-        });
-    });
-
-=======
             marker.setLngLat(coordinates);
             updateWeather(coordinates);
             $('#find-city-input').val('');
@@ -337,6 +207,5 @@ $(function (){
         });
     });
 //  ####################################################################################################################
->>>>>>> safety-box
 });
 
