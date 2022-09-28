@@ -1,16 +1,93 @@
+body {
+    background-color: #36393f;
+}
+
 #map {
     height: 300px;
     width: 100%;
+    border: 2px solid black;
+    border-radius: 20px;
+
+}
+a.navbar-brand {
+    font-size: 3rem;
+}
+
+#main-navbar {
+    font-family: 'Rubik', sans-serif;
+
+
+}
+
+.card-header {
+    width: fit-content;
+}
+
+#find-city-button {
+    border-radius: 5px;
+    color: black;
+}
+
+#find-city-input {
+    border-radius: 5px;
+    border: 2px solid black;
 }
 
 #find-city-wrapper {
     margin: 20px 0;
+    /*border-radius: 20px;*/
 }
 
 .stretchDiv {
-    width: 100%;
+    width: 90%;
+    margin: .8% 0 2% 0;
 }
 
 #map-functions {
     margin: 10px;
+}
+
+.forecast-card {
+    margin: 0 .8rem;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid gray;
+    border-radius: 12px;
+    color: #000000;
+    font-weight: bold;
+    padding: 0;
+
+}
+
+#forecast-cards-container {
+    margin: auto;
+    /*background-color: #848487;*/
+    /*overflow: scroll;*/
+    /*width: 100vh;*/
+}
+
+/*Affects all the p tags under forecast-card class*/
+.forecast-card>p {
+    margin: .5rem 0;
+}
+
+.wrapper-image {
+    height: 60%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: relative;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
 }
