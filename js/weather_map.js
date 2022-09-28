@@ -1,5 +1,5 @@
 $(function (){
-
+    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 // #################### Mapbox API #################################################
 
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
@@ -12,6 +12,7 @@ $(function (){
     });
 
 // ####################### Weather Map API ########################################
+
 
 
     // $.get("http://api.openweathermap.org/data/2.5/weather", {
@@ -53,47 +54,65 @@ $(function (){
 
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
-        // San Antonio
-        lat: 29.423017,
-        lon: -98.48527,
-
-        // Houston
-        // lat: 29.77159537828818,
-        // lon: -95.42468488722787,
-
-        // Pyeongtaek
-        // lat: 37.00023056197412,
-        // lon: 126.96437808817802,
-
-        // p: 'Houston',
+        lat:    29.423017,
+        lon:   -98.48527,
         units: "imperial"
     }).done(function(data) {
-        // console.log(data);
+        $('#currentCity').text(`Current City: ${data.city.name}`);
+        console.log(data);
         // console.log(data.list[0].weather);
         // console.log(data.list.weather.description)
         data.list.forEach((forecast, index) => {
-
+            console.log(data.list[index]);
             let dailyIndexRate = index % 8 === 0;
-
-            // if (index % 8 === 0) {
-            //     console.log(forecast.dt_txt);
-            // }
             if (dailyIndexRate) {
-                // console.log(data.list[index]);
-                $('#forecast-cards-container').append(`<div class="card col-2 forecast-card">
-                    <p>Date: ${data.list[index].dt_txt}</p>
+                $('#forecast-cards-container').append(`<div class="card col-lg-2 col-md-4 forecast-card">
+                    <p>Date: ${data.list[index].dt_txt.split(' ')[0]}</p>
+                    <hr class="stretchDiv">
                     <p>Temperature: ${data.list[index].main.temp}</p>
-                    <p>Description: ${data.list[index].weather[0].description}</p>
-                    <p>Humidity: ${data.list[index].main.humidity}</p>
-                    <p>Wind Speed: ${data.list[index].wind.speed}</p>
-                    <p>Pressure: ${data.list[index].main.pressure}</p>
-                    </div>`)
+                    <hr class="stretchDiv">
+                    <p>Description:  ${data.list[index].weather[0].description}</p>
+                    <hr class="stretchDiv">
+                    <p>Humidity:  ${data.list[index].main.humidity}</p>
+                    <hr class="stretchDiv">
+                    <p>Wind Speed:  ${data.list[index].wind.speed}</p>
+                    <hr class="stretchDiv">
+                    <p>Pressure:  ${data.list[index].main.pressure}</p>
+                    </div>`);
             }
 
-        });
+        })
 
     });
 
+
+
+
+    function formatTime(timeStamp){
+        let dateTime = new Date(timeStamp * 1000);
+        let year = dateTime.getFullYear();
+        let month = months[dateTime.getMonth()];
+        let day = dateTime.getDate();
+        let hour = appendLeadingZeroes(dateTime.getHours());
+        let minutes = appendLeadingZeroes(dateTime.getMinutes());
+        let seconds = appendLeadingZeroes(dateTime.getSeconds());
+        let formattedDateTime = month + " " + day + " " + year + " " + hour + ":" + minutes + ":" + seconds;
+        return formattedDateTime;
+    }
+
+    function appendLeadingZeroes(n){
+        if(n <= 9){
+            return "0" + n;
+        }
+        return n;
+    }
+
+    //converting the given unix time in miliseconds into
+    //a human-readable format
+    function epochDateConversion(milliseconds){
+        let date = new Date(milliseconds * 1000)
+        return (`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`)
+    }
 
     function windCardinalDirection(degrees){
         let cardinalDirection = '';
@@ -133,87 +152,63 @@ $(function (){
         return cardinalDirection;
     }
 
+// ####################### Necessary Functions ##################################################
 
-    function appendLeadingZeroes(n){
-        if(n <= 9){
-            return "0" + n;
-        }
-        return n;
-    }
 
-    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
-    function formatTime(timeStamp){
-        let dateTime = new Date(timeStamp * 1000);
-        let year = dateTime.getFullYear();
-        let month = months[dateTime.getMonth()];
-        let day = dateTime.getDate();
-        let hour = appendLeadingZeroes(dateTime.getHours());
-        let minutes = appendLeadingZeroes(dateTime.getMinutes());
-        let seconds = appendLeadingZeroes(dateTime.getSeconds());
-        let formattedDateTime = month + " " + day + " " + year + " " + hour + ":" + minutes + ":" + seconds;
-        return formattedDateTime;
-    }
 
-    //converting the given unix time in miliseconds into
-    //a human-readable format
-    function epochDateConversion(milliseconds){
-        let date = new Date(milliseconds * 1000)
-        return (`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`)
-    }
-
-    function getCoords(address, token){
-        geocode(address, token).then(function (coordinates){
-            console.log(coordinates);
-            // coords = coordinates;
+    // Weather card updater function
+    function printWeather(data) {
+        $( "#forecast-cards-container" ).empty(); // This will clear the cards before you put a new location
+        data.list.forEach((forecast, i) => {
+            // console.log(data);
+            if (i % 8 === 0) {
+                $(`#forecast-cards-container`).append(`
+                <div class="card col-lg-2 forecast-card">
+                <p> Current date: ${data.list[i].dt_txt.split(' ')[0]}</p>
+                <hr class="stretchDiv">
+                <p>Temperature: ${data.list[i].main.temp}</p>
+                <hr class="stretchDiv">
+                <p>Description: ${data.list[i].weather[0].description}</p>
+                <hr class="stretchDiv">
+                <p>Humidity: ${data.list[i].main.humidity}</p>
+                <hr class="stretchDiv">
+                <p>Wind Speed: ${data.list[i].wind.speed}</p> 
+                <hr class="stretchDiv">
+                <p>Pressure: ${data.list[i].main.pressure}</p>
+                </div>`);
+            }
         });
     }
+    function updateWeather(coordinates) {
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: OPEN_WEATHER_APPID,
+            lat: coordinates[1],
+            lon: coordinates[0],
+            units: "imperial" // this is fahrenheit
+        }).done(function (data) {
+            console.log("completed updateWeather get request");
+            printWeather(data);
+            $('#currentCity').text(`Current City: ${data.city.name}`);
 
-
-
-
-    document.getElementById('find-city-button').addEventListener('click', function (e){
+        });
+    }
+    // Search Bar
+    document.getElementById('find-city-button').addEventListener('click', function (e) {
         e.preventDefault();
+
         const address = document.getElementById('find-city-input').value;
         console.log(address);
-        geocode(address, MAPBOX_API_TOKEN).then(function (coordinates){
+
+        geocode(address, MAPBOX_API_TOKEN).then(function (coordinates) {
+
             console.log(coordinates);
             const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
             map.setCenter(coordinates);
-            console.log(coordinates);
-
-
-
-
-
-            // userMarker.forEach((element, index) =>{
-            //     let allPopInfo = new mapboxgl.Popup().setHTML();
-            //     userMarker.setPopup(allPopInfo);
-            // });
+            updateWeather(coordinates);
 
         });
     });
-
-
-
-
-
-//     betterRestaurantInfo.forEach((element, index) =>{
-// // const codeupPopup = new mapboxgl.Popup().setHTML('<p class="mt-3" style="width: 200px;">Codeup</p>');
-// // codeupMarker.setPopup(codeupPopup);
-//         let allMarker = new mapboxgl.Marker().setLngLat(betterRestaurantInfo[index].lngLat).addTo(map);
-//         let allPopInfo = new mapboxgl.Popup().setHTML(`<div class="card mt-3 d-flex row" style="overflow-y: scroll;"><div class="icon-wrapper justify-content-center col-12">${betterRestaurantInfo[index].image}</div> <p class="mt-3 col-12" style="width: 200px;">${betterRestaurantInfo[index].bio}</p></div>`);
-//         allMarker.setPopup(allPopInfo);
-//
-//
-// // let allPop = new mapboxgl.Popup().setHTML(`<p class="mt-3" style="width: 230px;">${betterRestaurantInfo[index].bio}</p>`);
-//
-//
-//         console.log(betterRestaurantInfo[index].lngLat);
-//         console.log(betterRestaurantInfo[index].name);
-//     });
-
-    // $('.forecast-card').append(`<p>Temperature data: ${data} </p>`).;
 
 });
 
