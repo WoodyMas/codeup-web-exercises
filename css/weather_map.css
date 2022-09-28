@@ -5,6 +5,8 @@ body {
 #map {
     height: 300px;
     width: 100%;
+    border: 2px solid black;
+
 }
 #main-navbar {
     font-family: Impact;
@@ -38,7 +40,7 @@ body {
     margin: 0 .8rem;
     /*background-color: #36393f;*/
     border: 2px solid black;
-    border-radius: 0px;
+    border-radius: 3px;
     color: black;
 }
 
@@ -50,4 +52,24 @@ body {
 /*Affects all the p tags under forecast-card class*/
 .forecast-card>p {
     margin: .5rem 0;
+}
+
+.wrapper-image {
+    height: 40%;
+    width: 70%;
+    justify-content: center;
+}
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
 }

@@ -34,14 +34,22 @@
 
     <nav id="main-navbar" class="navbar bg-primary"> <!-- Navbar element -->
         <div class="container-fluid">
-            <a id="currentCity" class="navbar-brand">Current City: </a>
+
             <a class="navbar-brand">Weather App</a>
 
             <!-- Find City Search Bar -->
             <div id="find-city-wrapper">
 <!--                <label for="find-city-input">City</label>-->
-                <input type="text" id="find-city-input" placeholder="Search for a city">
-                <button id="find-city-button">Find City</button>
+
+
+                <div class="col-12">
+                    <a id="currentCity" class="navbar-brand">Current City: </a>
+                </div>
+                <div class="col-12">
+                    <label for="find-city-input">City</label>
+                    <input type="text" id="find-city-input" placeholder="Search for a city">
+                    <button id="find-city-button">Find City</button>
+                </div>
             </div>
 
             <!--<form class="d-flex" role="search">-->
@@ -56,6 +64,7 @@
 <section> <!-- Graphic Display Section for Map -->
     <div class="stretchDiv container row mx-auto"> <!-- Div wrapper for Map -->
         <div id='map' class="mx-auto-4"></div> <!-- Mapbox -->
+        <pre id="coordinates" class="coordinates"></pre>
     </div> <!-- /Div wrapper for Map -->
 </section> <!-- /Graphic Display Section for Map -->
 
