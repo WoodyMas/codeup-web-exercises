@@ -2,57 +2,51 @@ $(function (){
     const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 // #################### Mapbox API #################################################
+// Original Mapbox API
+    //mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    //     const map = new mapboxgl.Map({
+    //         container: 'map', // container ID
+    //         style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //         center: [-74.5, 40], // starting position [lng, lat]
+    //         zoom: 9, // starting zoom
+    //         projection: 'globe' // display the map as a 3D globe
+    //     });
+
+    // Original Mapbox API Call
+    //mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    //     const map = new mapboxgl.Map({
+    //         container: 'map', // container ID
+    //         style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //         center: [-74.5, 40], // starting position [lng, lat]
+    //         zoom: 9, // starting zoom
+    //         projection: 'globe' // display the map as a 3D globe
+    //     });
 
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9, // starting zoom
-        projection: 'globe' // display the map as a 3D globe
+        container: 'map',
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.48527, 29.423017],
+        zoom: 9
     });
 
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    }).setLngLat([-98.48527, 29.423017]).addTo(map);
+
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+        let newCoords = [`${lngLat.lng}`, `${lngLat.lat}`];
+        updateWeather(newCoords);
+    }
+
+    marker.on('dragend', onDragEnd);
+
 // ####################### Weather Map API ########################################
-
-
-
-    // $.get("http://api.openweathermap.org/data/2.5/weather", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat: 29.423017,
-    //     lon: -98.48527,
-    //     units: 'imperial'
-    // }).done(function(data) {
-    //     console.log('current weather:')
-    //     console.log(data);
-    //     console.log(windCardinalDirection(data.wind.deg));
-    // });
-
-    // $.get("https://api.openweathermap.org/data/2.5/weather", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     q:     "San Antonio, US"
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
-
-    // $.get("http://api.openweathermap.org/data/2.5/onecall", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat: 29.423017,
-    //     lon: -98.48527
-    // }).done(function(data) {
-    //     console.log(data);
-    // });
-
-    // $.get("http://api.openweathermap.org/data/2.5/onecall", {
-    //     APPID: OPEN_WEATHER_APPID,
-    //     lat:    29.423017,
-    //     lon:   -98.48527,
-    //     units: "imperial"
-    // }).done(function(data) {
-    //     console.log('The entire response:', data);
-    //     console.log('Diving in - here is current information: ', data.current);
-    //     console.log('A step further - information for tomorrow: ', data.daily[1]);
-    // });
-
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat:    29.423017,
@@ -60,6 +54,7 @@ $(function (){
         units: "imperial"
     }).done(function(data) {
         $('#currentCity').text(`Current City: ${data.city.name}`);
+        // map.setCenter([`${data.lon}`, `${data.lat}`]);
         console.log(data);
         // console.log(data.list[0].weather);
         // console.log(data.list.weather.description)
@@ -69,10 +64,8 @@ $(function (){
             if (dailyIndexRate) {
                 $('#forecast-cards-container').append(`
                     <div class="card col-lg-2 col-md-4 forecast-card">
-                        <p>Date: ${data.list[index].dt_txt.split(' ')[0]}</p>
-                        <hr class="stretchDiv">
-                        <p>Temperature: ${data.list[index].main.temp} <sup>o</sup>F</p>
-                        <hr class="stretchDiv">
+                        <p class="card-header">Date: ${data.list[index].dt_txt.split(' ')[0]}</p>
+                        <p>Temperature: ${data.list[index].main.temp}&#8457</p>
                             <div class="wrapper-image">
                                 <img src="http://openweathermap.org/img/w/${data.list[index].weather[0].icon}.png">
                             </div>
@@ -85,11 +78,8 @@ $(function (){
                         <p>Pressure:  ${data.list[index].main.pressure}</p>
                     </div>`);
             }
-
-        })
-
+        });
     });
-
     function formatTime(timeStamp){
         let dateTime = new Date(timeStamp * 1000);
         let year = dateTime.getFullYear();
@@ -150,7 +140,8 @@ $(function (){
         }
         return cardinalDirection;
     }
-// ####################### Necessary Functions ##################################################
+
+// ####################### Weather Card Generator Function ##################################################
     // Weather card updater function
     function printWeather(data) {
         $( "#forecast-cards-container" ).empty(); // This will clear the cards before you put a new location
@@ -159,10 +150,9 @@ $(function (){
             if (i % 8 === 0) {
                 $(`#forecast-cards-container`).append(`
                 <div class="card col-lg-2 forecast-card">
-                    <p> Current date: ${data.list[i].dt_txt.split(' ')[0]}</p>
-                    <hr class="stretchDiv">
-                    <p>Temperature: ${data.list[i].main.temp} <sup>o</sup>F</p></p>
-                    <hr class="stretchDiv">
+                    <p class="card-header"> Current date: ${data.list[i].dt_txt.split(' ')[0]}</p>
+<!--                    <hr class="stretchDiv">-->
+                    <p>Temperature: ${data.list[i].main.temp}&#8457</p>
                     <div class="wrapper-image">
                         <img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">
                     </div>
@@ -178,6 +168,8 @@ $(function (){
         });
     }
 
+//  #################################### Update Weather Info With a New API Call #######################################
+
     function updateWeather(coordinates) {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
@@ -191,6 +183,9 @@ $(function (){
 
         });
     }
+
+//  ########################################## Search Bar Updates Map Function #########################################
+
     // Search Bar
     document.getElementById('find-city-button').addEventListener('click', function (e) {
         e.preventDefault();
@@ -202,14 +197,15 @@ $(function (){
 
             console.log(coordinates);
 
-            const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+            // const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+
             map.setCenter(coordinates);
+            marker.setLngLat(coordinates);
             updateWeather(coordinates);
+            $('#find-city-input').val('');
 
         });
     });
-
-
-
+//  ####################################################################################################################
 });
 
