@@ -79,15 +79,18 @@ a.navbar-brand {
 }
 
 .coordinates {
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    position: relative;
+    background: #FFFFFF;
+    color: #000;
+    position: inherit;
     bottom: 40px;
     left: 10px;
     padding: 5px 10px;
-    margin: 0;
+    margin: 12px;
     font-size: 11px;
     line-height: 18px;
     border-radius: 3px;
     display: none;
+    height: fit-content;
+    width: fit-content;
+
 }

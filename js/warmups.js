@@ -768,3 +768,18 @@ function doubleArrayVals (array) {
             newArr.push(array[i] * 2);
     } return newArr;
 }
+
+const Test = {
+    name: 'Mason',
+    oldSyntax: function (){
+        console.log('Old Syntax works');
+    },
+
+    //Doesn't work because arrow functions don't play well with Methods
+    outputName: ()=>{
+        console.log(this.name);
+    }
+}
+
+// Test.outputName();
+// Test.oldSyntax();
