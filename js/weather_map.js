@@ -150,7 +150,7 @@ $(function (){
             if (i % 8 === 0) {
                 $(`#forecast-cards-container`).append(`
                 <div class="card col-lg-2 forecast-card">
-                    <p class="card-header"> Current date: ${data.list[i].dt_txt.split(' ')[0]}</p>
+                    <p class="card-header"> Date: ${data.list[i].dt_txt.split(' ')[0]}</p>
 <!--                    <hr class="stretchDiv">-->
                     <p>Temperature: ${data.list[i].main.temp}&#8457</p>
                     <div class="wrapper-image">
@@ -208,4 +208,3 @@ $(function (){
     });
 //  ####################################################################################################################
 });
-
