@@ -25,10 +25,10 @@ const pricesAfterTax = prices.map(price => {
 
 // .map produces a new array from an array. See example below:
 
-let doubledPrices = prices.map(price => price * 2);
+// let doubledPrices = prices.map(price => price * 2);
 
 console.log(`Prices: ${prices}`);
-console.log(doubledPrices);
+// console.log(doubledPrices);
 console.log(pricesAfterTax);
 
 const desserts = ['sherbert', 'whisky cake', 'cupcake', 'eclair'];
@@ -40,3 +40,65 @@ console.log(eatingDessert);
 eatingDessert.forEach(element => {
    $('div').append(`<p>${element}</p>`)
 });
+
+const cars = [
+    {
+        make: "Honda",
+        model: "Civic",
+        mileage: 10428
+    },
+    {
+        make: "Toyota",
+        model: "Corolla",
+        mileage: 9425
+    },
+    {
+        make: "Ford",
+        model: "Mustang",
+        mileage: 2567
+    },
+    {
+        make: "Audi",
+        model: "A3",
+        mileage: 14500
+    },
+    {
+        make: "Mazda",
+        model: "3",
+        mileage: 11248
+    }
+];
+
+const mileages = cars.map(car => car.mileage);
+
+console.log(mileages);
+
+// const newObject = cars.map(car => {
+//     car.newProp = 'new property';
+//     return car;
+// });
+
+const array = [4, 5, 7, 9];
+
+function doubleTheArray (array){
+    let newArr =[];
+    for (let i = 0; i < array.length; i++){
+        newArr.push(array[i] * 2);
+    } return newArr;
+}
+
+console.log(doubleTheArray(array));
+
+const under10K = cars.filter(car => car.mileage < 1000);
+
+under10K.forEach(({make, model, mileage}) =>{
+    output += `<p>I found a ${make} ${model} with ${mileage} miles</p>`;
+});
+
+const under10KDollarsWithTax = prices.filter(price => price < 10).map(price =>{
+    const tax = (price * 0.0825).toFixed(2);
+    const total = (price + parseFloat(tax)).toFixed(2);
+    return parseFloat(total)
+}).forEach(price => $('div').append(`<p>${price}</p>`));
+
+console.log(under10KDollarsWithTax);
