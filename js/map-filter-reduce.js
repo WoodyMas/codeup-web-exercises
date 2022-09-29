@@ -102,3 +102,14 @@ const under10KDollarsWithTax = prices.filter(price => price < 10).map(price =>{
 }).forEach(price => $('div').append(`<p>${price}</p>`));
 
 console.log(under10KDollarsWithTax);
+
+const totalCost = prices.reduce(function (total, price,){
+    return total + price;
+});
+console.log(totalCost);
+
+totalCostVar = affordablesWithTax.reduce(function(total, itemPrice, index){
+    console.log(`The index is ${index}, the total is ${total}, the itemPrice is ${itemPrice}`);
+    return total + itemPrice;
+});
+$("#output").append(`<p>The total is ${totalCost}</p>`);
