@@ -35,17 +35,17 @@ const users = [
 // declared as `const`
 const name = 'Mason Wudtee';
 const email = 'mwudtee48@gmail.com';
-const languages = ['jQuery', '"JS"'];
+const languages = ['jQuery', 'JS', 'CSS', 'HTML'];
 
 // TODO: rewrite the object literal using object property shorthand
 console.log(`users log before push`);
 console.log(users);
 
-users.push({
-  name: name,
-  email: email,
-  languages: languages
-});
+// users.push({
+//   name: name,
+//   email: email,
+//   languages: languages
+// });
 
 users.push({name: `${name}`, email: `${email}`, languages: `${languages}`});
 
@@ -73,17 +73,17 @@ users.forEach(function({name, email, languages}) {
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
   //       parameter definition
-  name = user.name;
-  email = user.email;
-  languages = user.languages;
-
+  // name = users.name;
+  // email = users.email;
+  // languages = users.languages;
+  // return {name: user.name, email: user.email, languages: user.languages};
 
   // TODO: rewrite the assignment below to use template strings
   // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
-  developers.push(`${name}'s email is ${email}. ${name} knows ${languages} `);
-  console.log(developers);
+  developers.push(`${name}'s email is ${email}. ${name} knows ${languages}`);
+  // console.log(developers);
 });
-
+console.log(developers);
 
 // TODO: Use `let` for the following variable
 let list = '<ul>';
@@ -92,5 +92,8 @@ let list = '<ul>';
 for(let developer of developers) {
   // TODO: rewrite the assignment below to use template strings
   list += `<li>${developer}</li>`;
+
+
 };
+$('body').append(list);
 // list += '</ul>';
