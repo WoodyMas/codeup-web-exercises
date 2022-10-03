@@ -52,7 +52,7 @@ let totalYears = users.reduce((acc, element, index)=>{
     console.log(element.yearsOfExperience);
     return acc + element.yearsOfExperience;
 
-}, 0)
+}, 0);
 
 let averageYears = users.reduce((acc, element, index, array)=>{
     console.log(element.yearsOfExperience);
@@ -73,6 +73,20 @@ let getLongestText = users.reduce(
 
 let returnAllUserString = users.reduce((acc, {name}, index, array)=>{
     //Your instructors are: ryan, luis, zach, fernando, justin.
-    // name += users[index].name;
-});
+    return acc += name;
+}, "Your Instructors are: ");
 console.log(returnAllUserString);
+
+let returnBetterUserString = users.reduce((acc, user, index, array)=>{
+    return acc + `${acc ? ', ' : 'Your Instructors are: '}${user.name}${index === (array.length -1) ? '.': ''}`
+}, '');
+console.log(returnBetterUserString);
+
+let bonusReduce = users.reduce((acc, user, index, array)=>{
+    user.languages.forEach((language)=>{
+        !acc.includes(language) && acc.push(language);
+    });
+    return acc;
+}, []);
+
+console.log(bonusReduce);
