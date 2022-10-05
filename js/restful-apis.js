@@ -1,30 +1,37 @@
 // API -- Application Programming Interface
-// A set of rules defining how applications and/or devices can connect to each other and communicate with one another
+// a set of rules defining how applications and/or devices can connect to each other and communicate with one another
 
-// REST means representational state transfer
-    // A pattern of design principles for APIs
-    // REST APIs communicate via HTTP requests
+// REST means representational state transfer.
+// A pattern of design principles for APIs
+// REST APIs communicate via HTTP requests
 
 // In a REST API, communication via HTTP requests is used to perform the standard set of actions called CRUD
-    // Create, Read, Update, Delete
+// Create, Read, Update, Delete
 
-// JSON Javascript Object Notation is not mandatory but is popular because it is both human and machine-readable
+// JSON JavaScript Object Notation is not mandatory but is popular because it is both human- and machine-readable
+
+// https://glitch.com/misty-glow-driver
+
+const booksURL = "https://misty-glow-driver.glitch.me/books";
+
+const moviesURL = "https://misty-glow-driver.glitch.me/movies";
 
 
-// https://glitch.com/assorted-sepia-mammal
+// The R in CRUD: Read
 
-    // https://glitch.com/edit/#!/assorted-sepia-mammal
+function getMovies(){
+    fetch("https://misty-glow-driver.glitch.me/movies").then(resp => resp.json()).then(data=>console.log(data));
+}
 
-// https://glitch.com/edit/#!/assorted-sepia-mammal
+getMovies();
 
-const booksURL = 'https://assorted-sepia-mammal.glitch.me/books';
-const moviesURL = 'https://assorted-sepia-mammal.glitch.me/movies';
+// The C in CRUD: Create
 
 const bookToPost = {
-    title: 'Eleanor of Aquitaine',
+    title: "Eleanor of Aquitaine",
     author: {
-        firstName: 'Ralph',
-        lastName: 'Turner'
+        firstName: "Ralph",
+        lastName: "Turner"
     }
 }
 
@@ -36,31 +43,22 @@ const postOptions = {
     body: JSON.stringify(bookToPost)
 }
 
-function getMovies () {
-    fetch(moviesURL)
-        .then(resp => resp.json())
-        .then(data => console.log(data));
+function getBooks(){
+    fetch(booksURL).then(resp => resp.json()).then(data=>console.log(data));
 }
 
-function getBooks () {
-    fetch(booksURL)
-        .then(resp => resp.json())
-        .then(data => console.log(data));
-}
-
-
-getMovies();
-//
 getBooks();
 
 // fetch(booksURL, postOptions).then(getBooks);
 
+// The U in CRUD: Updating with PUT and PATCH requests
 // We'll use PUT to replace the entire content
-// We'll use PATCH to modify a part of the entry
+// We'll use PATCH to modify only part of the entry
 
 let modification = {
-    title: 'Eleanor of alfalfa stick',
+    title: "Eleanor of Aquitaine: Queen of France, Queen of England"
 }
+
 const patchOptions = {
     method: 'PATCH',
     headers: {
@@ -69,32 +67,33 @@ const patchOptions = {
     body: JSON.stringify(modification)
 }
 
+// fetch(booksURL + "/1", patchOptions).then(getBooks);
+
 modification = {
-    title: 'Eleanor of Aquitaine and the Four Kings',
+    title: "Eleanor of Aquitaine and the Four Kings",
     author: {
-        firstName: 'Alfalfa',
-        lastName: 'Stick'
+        firstName: "Amy",
+        lastName: "Kelly"
     }
 }
 
 const putOptions = {
     method: 'PUT',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type' : 'application/json'
     },
     body: JSON.stringify(modification)
 }
 
-// fetch(booksURL + '/1', patchOptions).then(getBooks);
+// fetch(booksURL + "/1", putOptions).then(getBooks);
 
-
-// D in CRUD DELETE
+// THE D IN CRUD -- Delete
 
 const deleteOptions = {
     method: 'DELETE',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type' : 'application/json'
     }
 }
 
-// fetch(booksURL + "/10", deleteOptions).then(getBooks)
+fetch(booksURL + "/1", deleteOptions).then(getBooks);
