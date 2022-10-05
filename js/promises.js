@@ -68,3 +68,39 @@
 
 // ############################################### Exercise ##########################################################
 
+    function convertUTCDateToLocalDate(date) {
+        var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+
+        var offset = date.getTimezoneOffset() / 60;
+        var hours = date.getHours();
+
+        newDate.setHours(hours - offset);
+
+        return newDate;
+    }
+
+    function returnLastCommitDate (userName) {
+        fetch(`https://api.github.com/users/${userName}/events`, {headers: {'Authorization': GITHUB_API_TOKEN}}).then(response => {
+            return response.json();
+        }).then(data => {
+            let date = new Date(data[0].created_at).toDateString();
+            // let time = new Date(data[0].created_at).toTimeString();
+            console.log(data[0].created_at);
+            console.log(date);
+            return `Returned date: ${date}`;
+
+        });
+        //     .catch(error => console.log('no werky')).finally(()=> {
+        //     console.log("it'll work if u jus beleev");
+        // });
+    }
+
+    returnLastCommitDate('WoodyMas');
+    returnLastCommitDate('MarquisTheCoder');
+
+    function wait (number){
+        setTimeout(()=>{
+
+        }, number)
+    }
+
