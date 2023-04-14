@@ -7,6 +7,10 @@
 //     return !((isNaN(val)) || typeof val === "boolean" || val === null);
 // }
 
+document.onload(
+    alert("Doesn't matter")
+);
+
 
 // function average (array) {
 //     let total = 0;

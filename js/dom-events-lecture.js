@@ -67,7 +67,7 @@ document.querySelector("body").addEventListener('click', function (e){
 // Get user input from a form field
 let formInput = document.getElementById('formInput');
 
-formInput.onkeyup = function (){
+formInput.change = function (){
     console.log(formInput.value);
 }
 //
